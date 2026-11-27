@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens.
+ *  - Storefront (TN Stroke Guard): orange brand on a cool grey page.
+ *  - Admin (TN Affiliate OS): deep green sidebar, light grey canvas.
+ * Section owners may refine values to match the reference sites exactly.
+ */
+@theme inline {
+  --font-sans: var(--font-be-vietnam), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* storefront */
+  --color-brand-50: #fff7ed;
+  --color-brand-100: #ffedd5;
+  --color-brand-200: #fed7aa;
+  --color-brand-300: #fdba74;
+  --color-brand-400: #fb923c;
+  --color-brand-500: #f97316;
+  --color-brand-600: #ea580c;
+  --color-brand-700: #c2410c;
+  --color-brand-800: #9a3412;
+  --color-brand-900: #7c2d12;
+  --color-page: #edf0f5;
+  --color-ink: #0f172a;
+
+  /* admin */
+  --color-admin-bg: #f2f5f8;
+  --color-admin-sidebar: #0b2f36;
+  --color-admin-sidebar-2: #0d4a4c;
+  --color-admin-primary: #0f9d74;
+  --color-admin-primary-soft: #e7f7f1;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.rich p { margin: 0 0 1rem; line-height: 1.75; }
+.rich h2 { margin: 1.75rem 0 .75rem; font-size: 1.25rem; font-weight: 800; color: #0f172a; }
+.rich ul { margin: 0 0 1rem 1.25rem; list-style: disc; line-height: 1.75; }
+.rich strong { font-weight: 700; color: #0f172a; }
+@keyframes toast-in { from { opacity: 0; transform: translateY(12px) scale(.96); } to { opacity: 1; transform: none; } }
+.toast-in { animation: toast-in .25s ease-out; }

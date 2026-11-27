@@ -1,0 +1,569 @@
+{
+  "meta": {
+    "source": "https://tn-affiliate-os.vercel.app/",
+    "note": "Demo data as shown on screens (Vietnamese). Amounts in VND. Dates dd/mm/yyyy.",
+    "defaultRange": "01/01/2025 - 30/01/2025 (30 ngày gần nhất)"
+  },
+  "sidebar": {
+    "footer": ["Phiên bản demo S1 · Dữ liệu giả lập", "EBISU KAZE JAPAN · TN MALL"],
+    "items": [
+      {"route": "#/", "label": "Tổng quan", "icon": "house"},
+      {"route": "#/partners", "label": "Đối tác", "icon": "users", "submenu": ["Danh sách đối tác", "Hồ sơ đăng ký", "Cấp bậc & chính sách"]},
+      {"route": "#/customers", "label": "Khách hàng", "icon": "user-round"},
+      {"route": "#/orders", "label": "Đơn hàng", "icon": "shopping-cart"},
+      {"route": "#/commission", "label": "Hoa hồng & Đối soát", "icon": "database"},
+      {"route": "#/payments", "label": "Thanh toán", "icon": "credit-card"},
+      {"route": "#/campaigns", "label": "Chiến dịch", "icon": "megaphone"},
+      {"route": "#/products", "label": "Sản phẩm", "icon": "package"},
+      {"route": "#/reports", "label": "Báo cáo", "icon": "chart-no-axes-column"},
+      {"route": "#/training", "label": "Đào tạo", "icon": "graduation-cap"},
+      {"route": "#/integration", "label": "Tích hợp TN MALL", "icon": "link"},
+      {"route": "#/settings", "label": "Cài đặt", "icon": "settings"}
+    ]
+  },
+  "topbar": {
+    "searchPlaceholder": "Tìm kiếm đối tác, khách hàng, đơn hàng, chiến dịch...",
+    "shortcut": "Ctrl + K",
+    "demoBadge": "DỮ LIỆU DEMO",
+    "notificationCount": 12,
+    "notifications": [
+      "12 đối tác có hoa hồng > 50 triệu cần soát xét",
+      "287 đơn hàng chờ xác minh quá 24 giờ",
+      "3 đối tác có dấu hiệu bất thường",
+      "Chiến dịch \"Sale Tết 2025\" còn 2 ngày",
+      "60 hồ sơ đăng ký mới"
+    ],
+    "user": {"initials": "TN", "name": "CEO Triệu Nhung", "role": "CEO"},
+    "roleSwitcher": [
+      {"initials": "TN", "name": "CEO Triệu Nhung", "role": "CEO"},
+      {"initials": "HM", "name": "Trần Hoàng Minh", "role": "Kế toán"},
+      {"initials": "QA", "name": "Nguyễn Quỳnh Anh", "role": "Kế toán"},
+      {"initials": "QB", "name": "Trần Quốc Bảo", "role": "Vận hành đối tác"},
+      {"initials": "TH", "name": "Lê Thu Hà", "role": "Quản lý chính sách"},
+      {"initials": "MA", "name": "Nguyễn Thị Mai Anh", "role": "Đối tác (cổng đối tác)"}
+    ],
+    "userMenuFooter": "Cài đặt & nhật ký kiểm toán"
+  },
+  "enums": {
+    "partnerType": ["Affiliate", "CTV", "Đại lý"],
+    "partnerTier": ["Bronze", "Silver", "Gold", "Sapphire"],
+    "partnerStatus": ["Đang hoạt động", "Chờ duyệt", "Tạm dừng"],
+    "partnerSource": ["TN MALL", "Facebook", "TikTok", "Website", "YouTube", "Zalo"],
+    "region": ["Miền Bắc", "Miền Nam", "Miền Trung", "Tây Nguyên", "Khác"],
+    "customerStatus": ["Tái mua tốt", "Đã mua", "Tiềm năng", "Ngủ đông"],
+    "customerPurchaseCount": ["Tất cả", "Chưa mua", "1 lần", "Từ 2 lần"],
+    "orderPaymentStatus": ["Đã thanh toán", "Chờ xác minh"],
+    "orderShippingStatus": ["Chờ xác nhận", "Chờ lấy hàng", "Đang giao", "Hoàn thành"],
+    "orderSyncStatus": ["Đã đồng bộ", "Lỗi đồng bộ", "Chưa đồng bộ"],
+    "commissionStatus": ["Chờ duyệt", "Đã duyệt", "Tạm giữ", "Đã thanh toán"],
+    "commissionLedgerType": ["ACCRUAL", "REVERSAL", "PAYOUT", "ADJUSTMENT"],
+    "payoutStatus": ["Đã thanh toán"],
+    "campaignStatus": ["Đang chạy", "Sắp diễn ra", "Đã kết thúc"],
+    "productAffiliateStatus": ["Đang mở", "Đã đóng"],
+    "trainingBadge": ["Bắt buộc", "Tự chọn"],
+    "utmSource": ["facebook", "tiktok", "zalo", "youtube", "website"],
+    "utmMedium": ["post", "video", "story", "ads", "livestream"],
+    "rbacRoles": ["CEO", "Kế toán", "Vận hành đối tác", "Quản lý chính sách", "Đối tác (cổng đối tác)"]
+  },
+  "dashboard": {
+    "title": "Tổng quan điều hành",
+    "subtitle": "Hiệu quả chương trình Affiliate toàn hệ thống",
+    "kpis": [
+      {"label": "Doanh số GMV", "value": "12.850.000.000 ₫", "delta": "+24,6%", "trend": "up", "deltaNote": "so với 30 ngày trước"},
+      {"label": "Đối tác hoạt động", "value": "3.482", "delta": "+12,8%", "trend": "up"},
+      {"label": "Hoa hồng phải trả", "value": "1.927.500.000 ₫", "delta": "+22,1%", "trend": "up"},
+      {"label": "Đơn hàng hợp lệ", "value": "28.764", "delta": "+18,9%", "trend": "up"},
+      {"label": "Tỷ lệ tái mua", "value": "36,9%", "delta": "+4,2 điểm %", "trend": "up"}
+    ],
+    "combinedChart": {
+      "title": "Doanh số & Đơn hàng theo thời gian",
+      "toggles": ["Theo ngày", "Theo tuần"],
+      "defaultToggle": "Theo ngày",
+      "series": ["Doanh số (GMV) - tỷ đ (trục trái, line/area)", "Đơn hàng hợp lệ (cột, trục phải)"],
+      "xLabelsSample": ["01/01", "03/01", "05/01", "07/01", "09/01", "11/01", "13/01", "15/01", "17/01", "19/01", "21/01", "23/01", "25/01", "27/01", "29/01"],
+      "yLeft": {"label": "Doanh số (tỷ đ)", "ticks": ["0,0", "0,4", "0,8", "1,2", "1,6", "2,0", "2,5"], "max": 2.5},
+      "yRight": {"label": "Đơn hàng", "ticks": ["0", "500", "1.000", "1.500", "2.000", "2.500"]}
+    },
+    "gmvSourceDonut": {
+      "total": "12,85 Tỷ ₫",
+      "segments": [
+        {"label": "Đối tác Affiliate", "value": 7506400000, "pct": 58.4},
+        {"label": "TN MALL (Direct)", "value": 3175600000, "pct": 24.7},
+        {"label": "Chiến dịch đặc biệt", "value": 1452000000, "pct": 11.3},
+        {"label": "Khác", "value": 716000000, "pct": 5.6}
+      ]
+    },
+    "top5Partners": [
+      {"rank": 1, "name": "Nguyễn Thị Mai Anh", "handle": "@maianh_aff", "gmv": 1256400000, "orders": 2986, "commissionEst": 188460000},
+      {"rank": 2, "name": "Trần Minh Đức", "handle": "@minhduc_review", "gmv": 987300000, "orders": 2341, "commissionEst": 98730000},
+      {"rank": 3, "name": "Lê Thu Hương", "handle": "@thuong_affiliate", "gmv": 843500000, "orders": 1992, "commissionEst": 126525000},
+      {"rank": 4, "name": "Phạm Quang Huy", "handle": "@quanghuy_tn", "gmv": 721900000, "orders": 1736, "commissionEst": 72190000},
+      {"rank": 5, "name": "Đỗ Minh Trang", "handle": "@minhtrang_shop", "gmv": 689200000, "orders": 1621, "commissionEst": 48244000}
+    ],
+    "alerts": [
+      {"title": "12 đối tác có hoa hồng > 50 triệu", "desc": "Cần soát xét & phê duyệt thanh toán"},
+      {"title": "287 đơn hàng chờ xác minh", "desc": "Đã quá 24 giờ, cần xử lý"},
+      {"title": "3 đối tác có dấu hiệu bất thường", "desc": "Đơn hàng tăng đột biến (>300%)"},
+      {"title": "1 chiến dịch sắp kết thúc", "desc": "\"Sale Tết 2025\" – còn 2 ngày"}
+    ],
+    "quickStats": [
+      {"label": "Đối tác", "value": "4.218", "delta": "+11,9%"},
+      {"label": "Khách hàng", "value": "186.420", "delta": "+20,3%"},
+      {"label": "Chiến dịch", "value": "12", "delta": "+50,0%"}
+    ],
+    "footerStrip": "82 hồ sơ đăng ký chờ xử lý · Chính sách áp dụng: v1.3"
+  },
+  "partners": {
+    "title": "Quản lý đối tác Affiliate",
+    "subtitle": "Danh sách đối tác, trạng thái hoạt động và hiệu suất bán hàng",
+    "actions": ["Xuất Excel", "Thêm đối tác"],
+    "kpis": [
+      {"label": "Tổng đối tác", "value": "4.218", "delta": "+11,9%"},
+      {"label": "Đang hoạt động", "value": "3.482", "delta": "+12,8%"},
+      {"label": "Chờ duyệt", "value": "126", "delta": "+5,9%"},
+      {"label": "Tạm dừng", "value": "54", "delta": "-12,9%"}
+    ],
+    "tableColumns": ["#", "Mã đối tác", "Họ và tên", "Loại", "Cấp bậc", "Nguồn", "Doanh số ⇅", "Hoa hồng ⇅", "Đơn hàng ⇅", "Ngày đăng ký ⇅", "Trạng thái ⇅", "Thao tác"],
+    "rows": [
+      {"code": "AFF001286", "name": "Nguyễn Thị Mai Anh", "email": "maianh@affiliate.vn", "type": "Affiliate", "tier": "Sapphire", "source": "TN MALL", "gmv": 1256400000, "commission": 188460000, "orders": 2986, "joinedAt": "15/12/2024", "status": "Đang hoạt động"},
+      {"code": "CTV000972", "name": "Trần Minh Đức", "email": "minhduc@affiliate.vn", "type": "CTV", "tier": "Gold", "source": "Facebook", "gmv": 987300000, "commission": 98730000, "orders": 2341, "joinedAt": "10/12/2024", "status": "Đang hoạt động"},
+      {"code": "DL000358", "name": "Lê Thu Hương", "email": "thuhuong@affiliate.vn", "type": "Đại lý", "tier": "Sapphire", "source": "TikTok", "gmv": 843500000, "commission": 126525000, "orders": 1992, "joinedAt": "05/12/2024", "status": "Đang hoạt động"},
+      {"code": "AFF001301", "name": "Phạm Quang Huy", "email": "quanghuy@affiliate.vn", "type": "Affiliate", "tier": "Gold", "source": "Website", "gmv": 721900000, "commission": 72190000, "orders": 1736, "joinedAt": "01/12/2024", "status": "Chờ duyệt"},
+      {"code": "CTV001045", "name": "Đỗ Minh Trang", "email": "minhtrang@affiliate.vn", "type": "CTV", "tier": "Silver", "source": "Zalo", "gmv": 689200000, "commission": 48244000, "orders": 1621, "joinedAt": "28/11/2024", "status": "Đang hoạt động"},
+      {"code": "AFF001267", "name": "Vũ Đức Long", "email": "duclong@affiliate.vn", "type": "Affiliate", "tier": "Gold", "source": "YouTube", "gmv": 612750000, "commission": 61275000, "orders": 1480, "joinedAt": "25/11/2024", "status": "Tạm dừng"},
+      {"code": "DL000327", "name": "Hoàng Thị Ngọc", "email": "hoangngoc@affiliate.vn", "type": "Đại lý", "tier": "Silver", "source": "Facebook", "gmv": 498600000, "commission": 34902000, "orders": 1207, "joinedAt": "20/11/2024", "status": "Đang hoạt động"},
+      {"code": "CTV001022", "name": "Bùi Văn Nam", "email": "vannam@affiliate.vn", "type": "CTV", "tier": "Silver", "source": "TikTok", "gmv": 456300000, "commission": 31941000, "orders": 1103, "joinedAt": "18/11/2024", "status": "Chờ duyệt"}
+    ],
+    "pagination": {"text": "Hiển thị 1 – 8 trên 59 đối tác (mẫu demo)", "pages": ["1", "2", "3", "4", "5", "…", "8"]},
+    "topSources": [
+      {"source": "Facebook", "partners": 1642, "share": "38,9%"},
+      {"source": "TikTok", "partners": 912, "share": "21,6%"},
+      {"source": "TN MALL", "partners": 702, "share": "16,6%"},
+      {"source": "Website", "partners": 486, "share": "11,5%"},
+      {"source": "YouTube", "partners": 302, "share": "7,2%"},
+      {"source": "Zalo", "partners": 178, "share": "4,2%"}
+    ],
+    "regionDistribution": [
+      {"region": "Miền Bắc", "partners": 1642, "share": "38,9%"},
+      {"region": "Miền Nam", "partners": 1286, "share": "30,5%"},
+      {"region": "Miền Trung", "partners": 812, "share": "19,2%"},
+      {"region": "Tây Nguyên", "partners": 302, "share": "7,2%"},
+      {"region": "Khác", "partners": 176, "share": "4,2%"}
+    ],
+    "quickTasks": ["Duyệt đối tác chờ xử lý (126)", "Quản lý đối tác tạm dừng (54)", "Phân cấp / nâng cấp đối tác", "Mời đối tác mới"],
+    "addPartnerModal": {
+      "title": "Thêm đối tác",
+      "note": "Đối tác mới ở trạng thái Chờ duyệt, cấp Bronze. Không nhập giấy tờ/tài khoản ngân hàng thật vào bản demo.",
+      "fields": [
+        {"label": "Họ và tên", "required": true, "type": "text"},
+        {"label": "Email", "required": true, "type": "email"},
+        {"label": "Loại", "type": "select", "options": ["Affiliate", "CTV", "Đại lý"], "default": "Affiliate"},
+        {"label": "Nguồn", "type": "select", "options": ["Website", "Facebook", "TikTok", "TN MALL", "YouTube", "Zalo"], "default": "Website"},
+        {"label": "Khu vực", "type": "select", "options": ["Miền Bắc", "Miền Nam", "Miền Trung", "Tây Nguyên"], "default": "Miền Bắc"},
+        {"label": "Tỉnh/TP", "type": "text", "default": "Hà Nội"}
+      ],
+      "buttons": ["Hủy", "Tạo đối tác"]
+    },
+    "detail": {
+      "route": "#/partners/AFF001286",
+      "title": "Chi tiết hồ sơ đối tác",
+      "subtitle": "Thông tin định danh, hiệu suất, khách hàng và lịch sử giao dịch",
+      "header": {"code": "AFF001286", "name": "Nguyễn Thị Mai Anh", "tier": "Sapphire", "status": "Đang hoạt động"},
+      "actions": ["Chỉnh sửa hồ sơ", "Khóa tạm thời", "Gửi thông báo"],
+      "info": {"phone": "0972.•••.448", "email": "maianh@affiliate.vn", "region": "Hà Nội", "joinedAt": "15/12/2024", "owner": "Trần Quốc Bảo", "channel": "TN MALL"},
+      "tabs": ["Tổng quan", "Khách hàng", "Đơn hàng", "Hoa hồng", "Tài liệu", "Nhật ký"],
+      "kpis": [
+        {"label": "Doanh số (GMV)", "value": "1.256.400.000 ₫", "delta": "+24,6%"},
+        {"label": "Đơn hàng", "value": "2.986", "delta": "+12,8%"},
+        {"label": "Hoa hồng ước tính", "value": "188.460.000 ₫", "delta": "+22,1%"},
+        {"label": "Tỷ lệ chuyển đổi", "value": "4,61%", "delta": "+0,6 điểm %"}
+      ],
+      "customerSourceDonut": {"total": 5872, "segments": [{"label": "TN MALL (Direct)", "value": 2934, "pct": 50.0}, {"label": "Chiến dịch", "value": 1268, "pct": 21.6}, {"label": "Đối tác giới thiệu", "value": 998, "pct": 17.0}, {"label": "Khác", "value": 672, "pct": 11.4}]},
+      "recentCustomers": [
+        {"name": "Nguyễn Mai Anh", "code": "KH126584", "phone": "0969.•••.913", "orders": 3, "gmv": 1326000, "date": "25/01/2025"},
+        {"name": "Ngô Thùy Linh", "code": "KH126528", "phone": "0974.•••.156", "orders": 0, "gmv": 0, "date": "19/01/2025"},
+        {"name": "Vũ Thị Ngọc", "code": "KH126108", "phone": "0984.•••.274", "orders": 1, "gmv": 359000, "date": "15/01/2025"},
+        {"name": "Đặng Đức Long", "code": "KH125968", "phone": "0998.•••.183", "orders": 2, "gmv": 974000, "date": "10/01/2025"},
+        {"name": "Đỗ Thanh Nam", "code": "KH125499", "phone": "0927.•••.051", "orders": 1, "gmv": 429000, "date": "26/12/2024"}
+      ],
+      "bank": {"bank": "Vietcombank (VCB)", "account": "9935326892 DEMO", "holder": "NGUYỄN THỊ MAI ANH", "branch": "Hà Nội"},
+      "tax": {"taxCode": "8980329428 DEMO", "type": "Cá nhân", "issuedAt": "20/03/2024", "authority": "Chi cục Thuế Hà Nội", "note": "Quy tắc khấu trừ thuế TNCN: chờ kế toán ký duyệt (DEC)."},
+      "referral": {"code": "AFF001286", "link": "https://tnmall.vn/ref/AFF001286"},
+      "commissionLedger": {
+        "balance": "652.500 ₫",
+        "note": "Bút toán chỉ được thêm (accrual / reversal / payout). Không có thao tác sửa hoặc xóa bút toán từ giao diện.",
+        "rows": [
+          {"time": "28/01/2025 00:18", "type": "ACCRUAL", "order": "TM250129-10219", "desc": "Hoa hồng 15% đơn TM250129-10219", "policy": "v1.3", "amount": 190500},
+          {"time": "29/01/2025 05:17", "type": "ACCRUAL", "order": "TM250129-10313", "desc": "Hoa hồng 15% đơn TM250129-10313", "policy": "v1.3", "amount": 202500},
+          {"time": "29/01/2025 08:59", "type": "ACCRUAL", "order": "TM250129-10325", "desc": "Hoa hồng 15% đơn TM250129-10325", "policy": "v1.3", "amount": 259500}
+        ]
+      },
+      "ordersTab": [
+        {"code": "TM250129-10342", "customer": "Nguyễn Mai Anh", "product": "NMN 12000 Plus", "value": 1750000, "payment": "Đã thanh toán", "shipping": "Đang giao", "time": "29/01/2025 13:55"},
+        {"code": "TM250129-10325", "customer": "Ngô Thùy Linh", "product": "Krill Omega-3 1000mg", "value": 1730000, "payment": "Đã thanh toán", "shipping": "Hoàn thành", "time": "29/01/2025 08:59"},
+        {"code": "TM250129-10313", "customer": "Đặng Thị Tuấn", "product": "NMN 12000 Plus", "value": 1350000, "payment": "Đã thanh toán", "shipping": "Hoàn thành", "time": "29/01/2025 05:17"},
+        {"code": "TM250129-10219", "customer": "Lê Thu Hương", "product": "NMN 6000 Basic", "value": 1270000, "payment": "Đã thanh toán", "shipping": "Hoàn thành", "time": "28/01/2025 00:18"},
+        {"code": "TM250129-10191", "customer": "Nguyễn Gia Hân", "product": "NMN 6000 Basic", "value": 800000, "payment": "Đã thanh toán", "shipping": "Đang giao", "time": "27/01/2025 15:40"}
+      ],
+      "documents": [
+        {"name": "Hợp đồng đối tác (mẫu).pdf", "size": "482 KB", "tag": "DEMO"},
+        {"name": "Phụ lục chính sách v1.3.pdf", "size": "210 KB", "tag": "DEMO"}
+      ],
+      "documentsNote": "Giấy tờ định danh lưu ở kho tệp mã hóa (chưa triển khai — placeholder). Bản demo không lưu giấy tờ thật.",
+      "audit": [
+        {"time": "27/01/2025 14:05", "actor": "Trần Quốc Bảo", "action": "partner.bank.update", "target": "AFF001286", "detail": "Cập nhật thông tin tài khoản ngân hàng (giá trị đã che)"}
+      ],
+      "recentActivity": [
+        {"title": "Phát sinh hoa hồng 190.500 ₫", "desc": "Từ đơn hàng #TM250129-10219", "time": "28/01/2025 00:18"},
+        {"title": "Phát sinh hoa hồng 202.500 ₫", "desc": "Từ đơn hàng #TM250129-10313", "time": "29/01/2025 05:17"},
+        {"title": "Có đơn hàng mới #TM250129-10342", "desc": "Doanh số 1.750.000 ₫", "time": "29/01/2025 13:55"},
+        {"title": "Thêm mới khách hàng", "desc": "Nguyễn Mai Anh (KH126584)", "time": "20/01/2025"},
+        {"title": "Cập nhật thông tin hồ sơ", "desc": "Cập nhật thông tin tài khoản ngân hàng (giá trị đã che)", "time": "27/01/2025 14:05"}
+      ]
+    }
+  },
+  "customers": {
+    "title": "Khách hàng được giới thiệu",
+    "subtitle": "Theo dõi khách hàng, trạng thái chuyển đổi và tái mua",
+    "kpis": [
+      {"label": "Tổng khách hàng được ghi nhận", "value": "186.420", "delta": "+20,3%"},
+      {"label": "Khách mới tháng này", "value": "4.218", "delta": "+11,9%"},
+      {"label": "Tỷ lệ mua lần đầu", "value": "24,7%", "delta": "+3,6 điểm %"},
+      {"label": "Tỷ lệ tái mua", "value": "36,9%", "delta": "+4,2 điểm %"}
+    ],
+    "filters": {
+      "partner": ["Tất cả đối tác", "Nguyễn Thị Mai Anh", "Trần Minh Đức", "Lê Thu Hương", "Phạm Quang Huy", "Đỗ Minh Trang", "Vũ Đức Long", "Hoàng Thị Ngọc", "Bùi Văn Nam", "Ngô Thu Bảo", "Lê Yến Vy", "Nguyễn Gia Đức", "Bùi Thu Vy", "Ngô Văn Linh", "Hoàng Quang Khánh", "Hoàng Quang Ngọc", "Hoàng Thị Huy", "Vũ Văn Hương", "Nguyễn Minh Hương", "Bùi Văn Vy", "Nguyễn Hoài Nhi"],
+      "source": ["Tất cả nguồn", "Facebook", "TikTok", "Website", "Zalo"],
+      "status": ["Tất cả trạng thái", "Tái mua tốt", "Đã mua", "Tiềm năng", "Ngủ đông"],
+      "purchaseCount": ["Tất cả", "Chưa mua", "1 lần", "Từ 2 lần"]
+    },
+    "tableTitle": "Danh sách khách hàng được giới thiệu (180)",
+    "tableColumns": ["Mã KH", "Họ tên", "Người giới thiệu", "Nguồn", "Ngày ghi nhận", "Đơn đầu tiên", "Tổng chi tiêu", "Số lần mua", "Lần mua gần nhất", "Trạng thái"],
+    "rows": [
+      {"code": "KH126584", "name": "Nguyễn Mai Anh", "referrer": "@maianh_aff", "source": "Facebook", "recordedAt": "20/01/2025", "firstOrder": "20/01/2025", "spent": 1326000, "purchases": 3, "lastPurchase": "25/01/2025", "status": "Tái mua tốt"},
+      {"code": "KH126577", "name": "Trần Minh Đức", "referrer": "@minhduc_review", "source": "TikTok", "recordedAt": "20/01/2025", "firstOrder": "20/01/2025", "spent": 471000, "purchases": 1, "lastPurchase": "22/01/2025", "status": "Đã mua"},
+      {"code": "KH126570", "name": "Lê Thu Hương", "referrer": "@thuong_affiliate", "source": "Website", "recordedAt": "20/01/2025", "firstOrder": "–", "spent": 0, "purchases": 0, "lastPurchase": "–", "status": "Tiềm năng"},
+      {"code": "KH126563", "name": "Phạm Quang Huy", "referrer": "@quanghuy_tn", "source": "Facebook", "recordedAt": "20/01/2025", "firstOrder": "20/01/2025", "spent": 418000, "purchases": 1, "lastPurchase": "22/01/2025", "status": "Đã mua"},
+      {"code": "KH126556", "name": "Đỗ Minh Trang", "referrer": "@minhtrang_shop", "source": "TikTok", "recordedAt": "20/01/2025", "firstOrder": "20/01/2025", "spent": 1362000, "purchases": 3, "lastPurchase": "25/01/2025", "status": "Tái mua tốt"},
+      {"code": "KH126549", "name": "Vũ Quốc Bảo", "referrer": "@duclong_aff", "source": "Zalo", "recordedAt": "20/01/2025", "firstOrder": "–", "spent": 0, "purchases": 0, "lastPurchase": "–", "status": "Ngủ đông"},
+      {"code": "KH126542", "name": "Hoàng Yến Nhi", "referrer": "@hoangngoc_dl", "source": "Facebook", "recordedAt": "19/01/2025", "firstOrder": "19/01/2025", "spent": 939000, "purchases": 3, "lastPurchase": "20/01/2025", "status": "Tái mua tốt"},
+      {"code": "KH126535", "name": "Bùi Anh Khoa", "referrer": "@vannam_ctv", "source": "Website", "recordedAt": "19/01/2025", "firstOrder": "19/01/2025", "spent": 434000, "purchases": 1, "lastPurchase": "21/01/2025", "status": "Đã mua"},
+      {"code": "KH126528", "name": "Ngô Thùy Linh", "referrer": "@maianh_aff", "source": "TikTok", "recordedAt": "19/01/2025", "firstOrder": "–", "spent": 0, "purchases": 0, "lastPurchase": "–", "status": "Tiềm năng"},
+      {"code": "KH126521", "name": "Đặng Gia Hân", "referrer": "@minhduc_review", "source": "Facebook", "recordedAt": "19/01/2025", "firstOrder": "19/01/2025", "spent": 503000, "purchases": 1, "lastPurchase": "20/01/2025", "status": "Đã mua"}
+    ],
+    "pagination": {"text": "Hiển thị 1 – 10 trên 180 khách hàng (mẫu demo)", "pages": ["1", "2", "3", "4", "5", "…", "18"]},
+    "cohortChart": {
+      "title": "Tỷ lệ tái mua theo cohort (theo tháng ghi nhận)",
+      "months": ["T08/2024", "T09/2024", "T10/2024", "T11/2024", "T12/2024", "T01/2025"],
+      "repurchaseRatePct": [28.4, 31.2, 32.7, 34.6, 35.8, 36.9],
+      "yLeftMax": 10000
+    },
+    "cohortSummary": {"label": "Cohort T01/2025", "firstTimeCustomers": 4218, "repurchasers": 1558, "rate": "36,9%"},
+    "funnel": [
+      {"step": "Click", "value": 248360},
+      {"step": "Đăng ký", "value": 186420, "conv": "75,1%"},
+      {"step": "Đơn đầu", "value": 46073, "conv": "24,7%"},
+      {"step": "Tái mua", "value": 17006, "conv": "36,9%"}
+    ],
+    "sidePanel": {
+      "selected": "KH126584",
+      "name": "Nguyễn Mai Anh",
+      "code": "KH126584",
+      "status": "Tái mua tốt",
+      "phone": "0969.•••.913",
+      "email": "nguyenmaianh@example.com",
+      "city": "TP. HCM",
+      "referrer": "@maianh_aff",
+      "source": "Facebook",
+      "tags": ["VIP", "Tái mua cao"],
+      "attribution": {"partner": "AFF001286", "status": "Đã khóa", "note": "Claim giới thiệu, quyết định nguồn (attribution) và người chăm sóc (care) là 3 đối tượng riêng. Click link đối tác khác không đổi chủ attribution đã khóa."},
+      "actions": ["Mô phỏng click link đối tác khác"],
+      "recentOrders": [{"date": "29/01/2025", "code": "TM250129-10342", "product": "NMN 12000 Plus", "value": 1750000}]
+    }
+  },
+  "orders": {
+    "title": "Đơn hàng & đồng bộ TN MALL",
+    "subtitle": "Theo dõi đơn hàng Affiliate, trạng thái xử lý và log đồng bộ dữ liệu",
+    "kpis": [
+      {"label": "Tổng đơn hợp lệ", "value": "28.764", "delta": "+18,9%"},
+      {"label": "Đơn chờ xác minh", "value": "287", "delta": "+42,6%"},
+      {"label": "Đơn đã hoàn thành", "value": "27.951", "delta": "+19,1%"},
+      {"label": "Lỗi đồng bộ", "value": "12", "delta": "-50,0%"}
+    ],
+    "connectionStatus": {"text": "Hoạt động bình thường", "lastSync": "29/01/2025 14:32", "tag": "MOCK"},
+    "tabs": ["Đơn hàng", "Lỗi đồng bộ", "Nhật ký webhook"],
+    "filters": {
+      "payment": ["Tất cả trạng thái", "Đã thanh toán", "Chờ xác minh"],
+      "sync": ["Tất cả đồng bộ", "Đã đồng bộ", "Lỗi đồng bộ"]
+    },
+    "tableColumns": ["#", "Mã đơn", "Khách hàng", "Đối tác", "Sản phẩm", "Giá trị đơn", "TT thanh toán", "TT giao hàng", "Đủ ĐK hoa hồng", "Thời gian đặt", "TT đồng bộ", "Thao tác"],
+    "rows": [
+      {"code": "TM250129-10342", "customer": "Nguyễn Mai Anh", "partner": "@maianh_aff", "product": "NMN 12000 Plus", "amount": 1750000, "payment": "Đã thanh toán", "shipping": "Đang giao", "time": "29/01/2025 13:55", "sync": "Đã đồng bộ"},
+      {"code": "TM250129-10340", "customer": "Trần Minh Đức", "partner": "@minhduc_review", "product": "Krill Omega-3 1000mg", "amount": 790000, "payment": "Đã thanh toán", "shipping": "Hoàn thành", "time": "29/01/2025 13:18", "sync": "Đã đồng bộ"},
+      {"code": "TM250129-10338", "customer": "Lê Thu Hương", "partner": "@thuong_affiliate", "product": "Spirulina Organic", "amount": 1180000, "payment": "Đã thanh toán", "shipping": "Hoàn thành", "time": "29/01/2025 12:41", "sync": "Đã đồng bộ"},
+      {"code": "TM250129-10335", "customer": "Phạm Quang Huy", "partner": "@quanghuy_tn", "product": "Liver EX Premium", "amount": 1150000, "payment": "Chờ xác minh", "shipping": "Chờ lấy hàng", "time": "29/01/2025 12:04", "sync": "Đã đồng bộ"},
+      {"code": "TM250129-10333", "customer": "Đỗ Minh Trang", "partner": "@minhtrang_shop", "product": "AX21 Anti-Aging", "amount": 1300000, "payment": "Đã thanh toán", "shipping": "Hoàn thành", "time": "29/01/2025 11:27", "sync": "Đã đồng bộ"},
+      {"code": "TM250129-10331", "customer": "Vũ Quốc Bảo", "partner": "@duclong_aff", "product": "NMN 6000 Basic", "amount": 1580000, "payment": "Đã thanh toán", "shipping": "Hoàn thành", "time": "29/01/2025 10:50", "sync": "Lỗi đồng bộ"},
+      {"code": "TM250129-10329", "customer": "Hoàng Yến Nhi", "partner": "@hoangngoc_dl", "product": "Spirulina Tablet 1000", "amount": 1710000, "payment": "Đã thanh toán", "shipping": "Đang giao", "time": "29/01/2025 10:13", "sync": "Đã đồng bộ"},
+      {"code": "TM250129-10327", "customer": "Bùi Anh Khoa", "partner": "@vannam_ctv", "product": "NMN 12000 Plus", "amount": 940000, "payment": "Chờ xác minh", "shipping": "Chờ xác nhận", "time": "29/01/2025 09:36", "sync": "Đã đồng bộ"},
+      {"code": "TM250129-10325", "customer": "Ngô Thùy Linh", "partner": "@maianh_aff", "product": "Krill Omega-3 1000mg", "amount": 1730000, "payment": "Đã thanh toán", "shipping": "Hoàn thành", "time": "29/01/2025 08:59", "sync": "Đã đồng bộ"},
+      {"code": "TM250129-10323", "customer": "Đặng Gia Hân", "partner": "@minhduc_review", "product": "Spirulina Organic", "amount": 2170000, "payment": "Đã thanh toán", "shipping": "Đang giao", "time": "29/01/2025 08:22", "sync": "Đã đồng bộ"}
+    ],
+    "pagination": {"text": "Hiển thị 1 – 10 trên 90 đơn hàng (mẫu demo)", "pages": ["1", "2", "3", "4", "5", "…", "9"]},
+    "orderModal": {
+      "title": "Đơn TM250129-10342",
+      "fields": {"Khách hàng": "Nguyễn Mai Anh", "Đối tác": "AFF001286", "Giá trị": "1.750.000 ₫", "Đã hoàn": "0 ₫", "Bút toán hoa hồng": "Chưa có (đơn chưa hoàn thành)"},
+      "buttons": ["Đóng"]
+    },
+    "syncLog": [
+      {"title": "Đồng bộ thành công", "time": "29/01/2025 14:32", "desc": "Đồng bộ 1.254 đơn hàng từ TN MALL (mock)", "status": "Thành công"},
+      {"title": "Gửi webhook đơn hàng", "time": "29/01/2025 14:31", "desc": "Nhận webhook: 1.254 đơn mới (mock)", "status": "Thành công"},
+      {"title": "Đồng bộ thất bại", "time": "29/01/2025 11:17", "desc": "Lỗi kết nối API TN MALL (HTTP 503) (mock)", "status": "Lỗi"},
+      {"title": "Thử đồng bộ lại", "time": "29/01/2025 11:18", "desc": "Tự động thử lại sau 60 giây", "status": "Thành công"},
+      {"title": "Đồng bộ thành công", "time": "29/01/2025 10:05", "desc": "Đồng bộ 987 đơn hàng từ TN MALL (mock)", "status": "Thành công"}
+    ],
+    "syncChart": {"title": "Đơn hàng theo ngày & Tỷ lệ đồng bộ thành công", "yBarsMax": 2400, "yPctRange": ["90%", "100%"]},
+    "syncSummary": {"rate": "99,2%", "success": "28.552 đơn (99,2%)", "error": "212 đơn (0,7%)", "pending": "0 đơn (0,0%)"},
+    "actions": ["Giả lập webhook TN MALL"]
+  },
+  "commission": {
+    "title": "Hoa hồng, đối soát & thanh toán",
+    "subtitle": "Tính toán, kiểm tra và chi trả hoa hồng cho đối tác",
+    "period": "01/01/2025 – 30/01/2025",
+    "campaignFilter": ["Tất cả chiến dịch", "Sale Tết 2025", "Ưu đãi Combo Tháng 1", "Ra mắt Liver EX Premium", "Bùng nổ TikTok Q1", "Mini Game – Quà liền tay", "Black Friday 2024"],
+    "kpis": [
+      {"label": "Tổng hoa hồng phát sinh", "value": "1.256.400.000 ₫", "delta": "+24,9%"},
+      {"label": "Chờ duyệt", "value": "186.300.000 ₫", "delta": "+12,7%"},
+      {"label": "Sắp thanh toán", "value": "842.500.000 ₫", "delta": "+21,3%"},
+      {"label": "Đã thanh toán kỳ này", "value": "227.600.000 ₫", "delta": "+18,6%"}
+    ],
+    "tabs": ["Hoa hồng", "Đối soát", "Thanh toán"],
+    "commissionTab": {
+      "tableTitle": "Danh sách hoa hồng theo kỳ",
+      "tableColumns": ["#", "Kỳ", "Đối tác", "Doanh số đủ điều kiện", "Tỷ lệ", "Hoa hồng", "Điều chỉnh", "Trạng thái", "Người duyệt", "Thao tác"],
+      "rows": [
+        {"period": "T01/2025", "partner": "Nguyễn Thị Mai Anh", "handle": "@maianh_aff", "eligibleGmv": 1256400000, "rate": "15,0%", "commission": 188460000, "adjustment": 0, "status": "Chờ duyệt", "approver": "–"},
+        {"period": "T01/2025", "partner": "Trần Minh Đức", "handle": "@minhduc_review", "eligibleGmv": 987300000, "rate": "15,0%", "commission": 148095000, "adjustment": 2000000, "status": "Đã duyệt", "approver": "Trần Hoàng Minh"},
+        {"period": "T01/2025", "partner": "Lê Thu Hương", "handle": "@thuong_affiliate", "eligibleGmv": 843500000, "rate": "15,0%", "commission": 126525000, "adjustment": 0, "status": "Tạm giữ", "approver": "–"},
+        {"period": "T01/2025", "partner": "Phạm Quang Huy", "handle": "@quanghuy_tn", "eligibleGmv": 721900000, "rate": "15,0%", "commission": 108285000, "adjustment": -1000000, "status": "Đã duyệt", "approver": "Trần Hoàng Minh"},
+        {"period": "T01/2025", "partner": "Đỗ Minh Trang", "handle": "@minhtrang_shop", "eligibleGmv": 689200000, "rate": "15,0%", "commission": 103380000, "adjustment": 0, "status": "Đã thanh toán", "approver": "Nguyễn Quỳnh Anh"},
+        {"period": "T01/2025", "partner": "Vũ Đức Long", "handle": "@duclong_aff", "eligibleGmv": 412600000, "rate": "12,0%", "commission": 49512000, "adjustment": 0, "status": "Đã duyệt", "approver": "Trần Hoàng Minh"},
+        {"period": "T01/2025", "partner": "Hoàng Thị Ngọc", "handle": "@hoangngoc_dl", "eligibleGmv": 298400000, "rate": "12,0%", "commission": 35808000, "adjustment": 300000, "status": "Chờ duyệt", "approver": "–"},
+        {"period": "T01/2025", "partner": "Bùi Văn Nam", "handle": "@vannam_ctv", "eligibleGmv": 276900000, "rate": "10,0%", "commission": 27690000, "adjustment": 0, "status": "Đã thanh toán", "approver": "Nguyễn Quỳnh Anh"}
+      ],
+      "pagination": {"text": "Hiển thị 1 – 8 trên 40 kết quả", "pages": ["1", "2", "3", "4", "5"]},
+      "note": "Tỷ lệ & công thức tính là mẫu (chính sách v1.3 – chưa ký duyệt). Số tiền tính bằng số nguyên VND, quy tắc làm tròn R1-FLOOR. Điều chỉnh thực hiện bằng bút toán ADJUSTMENT, không sửa bút toán cũ."
+    },
+    "reconciliationTab": {
+      "title": "Đối soát kỳ T01/2025",
+      "summary": {"accrualTotal": "8.632.700 ₫", "reversalTotal": "0 ₫", "payoutTotal": "0 ₫"},
+      "note": "Số liệu ledger mẫu: 59 bút toán bất biến. Đối soát với TN MALL (GMV, hoàn trả) dùng adapter mock.",
+      "warnings": [
+        {"title": "23 đơn hàng chênh lệch doanh số", "detail": "Tổng chênh lệch: 12.460.000 ₫"},
+        {"title": "8 đơn hàng chưa đủ điều kiện", "detail": "Đang trong thời gian hoàn/đổi"},
+        {"title": "5 giao dịch cần điều chỉnh hoa hồng", "detail": "Tổng điều chỉnh: +2.300.000 ₫"}
+      ]
+    },
+    "paymentsTab": {
+      "summary": {"totalTransfer": "712.842.000 ₫", "partnerCount": "20 đối tác", "expectedPayDate": "31/01/2025", "period": "T01/2025"},
+      "actions": ["Tạo đợt thanh toán", "Xuất bảng kê", "Từ chối"],
+      "note": "Maker-checker: người lập đợt chi không được tự duyệt. Đổi vai trò ở menu tài khoản để thử. Ngân hàng: sandbox mô phỏng.",
+      "history": [
+        {"code": "PAY-20241231-001", "period": "T12/2024", "createdAt": "30/12/2024 14:08", "paidAt": "31/12/2024", "partners": 76, "total": 711200000, "status": "Đã thanh toán", "by": "Trần Hoàng Minh", "maker": "Nguyễn Quỳnh Anh", "checker": "Trần Hoàng Minh"},
+        {"code": "PAY-20241130-001", "period": "T11/2024", "createdAt": "29/11/2024 09:31", "paidAt": "30/11/2024", "partners": 72, "total": 648900000, "status": "Đã thanh toán", "by": "Trần Hoàng Minh", "maker": "Nguyễn Quỳnh Anh", "checker": "Trần Hoàng Minh"},
+        {"code": "PAY-20241031-001", "period": "T10/2024", "createdAt": "30/10/2024 16:15", "paidAt": "31/10/2024", "partners": 69, "total": 593400000, "status": "Đã thanh toán", "by": "Nguyễn Quỳnh Anh", "maker": "Trần Hoàng Minh", "checker": "Nguyễn Quỳnh Anh"}
+      ],
+      "createModal": {"title": "Tạo đợt thanh toán", "text": "Lập đợt chi cho 20 đối tác đã duyệt, tổng 712.842.000 ₫. Đợt chi phải được người khác phê duyệt.", "buttons": ["Hủy", "Tạo đợt chi"]}
+    }
+  },
+  "campaigns": {
+    "title": "Tạo liên kết giới thiệu",
+    "subtitle": "Sinh link Affiliate, mã QR và tham số UTM để theo dõi hiệu quả",
+    "form": {
+      "destination": {"label": "Chọn đích đến *", "options": ["NMN 12000 Plus", "Krill Omega-3 1000mg", "Spirulina Organic", "Liver EX Premium", "AX21 Anti-Aging", "NMN 6000 Basic", "Spirulina Tablet 1000", "Liver EX Mini"]},
+      "partner": {"label": "Chọn đối tác *", "options": ["Nguyễn Thị Mai Anh (@maianh_aff)", "Trần Minh Đức (@minhduc_review)", "Lê Thu Hương (@thuong_affiliate)", "Phạm Quang Huy (@quanghuy_tn)", "Đỗ Minh Trang (@minhtrang_shop)", "Vũ Đức Long (@duclong_aff)", "Hoàng Thị Ngọc (@hoangngoc_dl)", "Bùi Văn Nam (@vannam_ctv)", "Ngô Thu Bảo (@thubao_aff)", "Lê Yến Vy (@yenvy_aff)", "Nguyễn Gia Đức (@giaduc_aff)", "Bùi Thu Vy (@thuvy_aff)", "Ngô Văn Linh (@vanlinh_aff)", "Hoàng Quang Khánh (@quangkhanh_aff)", "Hoàng Quang Ngọc (@quangngoc_aff)", "Hoàng Thị Huy (@thihuy_aff)", "Vũ Văn Hương (@vanhuong_aff)", "Nguyễn Minh Hương (@minhhuong_aff)", "Bùi Văn Vy (@vanvy_aff)", "Nguyễn Hoài Nhi (@hoainhi_aff)", "Hoàng Thị Long (@thilong_aff)", "Trần Gia Nam (@gianam_aff)", "Trần Quang Hương (@quanghuong_aff)", "Đỗ Ngọc My (@ngocmy_aff)", "Dương Quang Long (@quanglong_aff)", "Vũ Bảo Khánh (@baokhanh_aff)", "Vũ Quang My (@quangmy_aff)", "Nguyễn Đức Trang (@ductrang_aff)", "Đỗ Văn Vy (@vanvy_aff)", "Dương Yến Bảo (@yenbao_aff)"]},
+      "campaign": {"label": "Chọn chiến dịch *", "options": ["Sale Tết 2025", "Ưu đãi Combo Tháng 1", "Ra mắt Liver EX Premium", "Bùng nổ TikTok Q1", "Mini Game – Quà liền tay"]},
+      "couponCode": {"label": "Mã giảm giá", "default": "Demo"},
+      "utmSource": {"label": "Nguồn truy cập (UTM Source) *", "options": ["facebook", "tiktok", "zalo", "youtube", "website"]},
+      "utmMedium": {"label": "Medium (UTM Medium) *", "options": ["post", "video", "story", "ads", "livestream"]},
+      "utmCampaign": {"label": "Campaign name (UTM Campaign) *", "hint": "Tên chiến dịch (không dấu, viết liền hoặc dấu gạch dưới)"},
+      "utmContent": {"label": "Content (UTM Content)", "hint": "vd: banner, video1, review"},
+      "customAlias": {"label": "Custom alias (Tùy chỉnh link rút gọn)", "hint": "a-z, 0-9, -"}
+    },
+    "actions": ["Sinh liên kết", "Sao chép", "Tạo mã QR", "Xem trước liên kết"],
+    "sample": {
+      "fullUrl": "https://tnmall.vn/san-pham/nmn-12000?ref=maianh_aff&campaign=sale_tet_2025&utm_source=facebook&utm_medium=post&utm_campaign=sale_tet_2025&utm_content=review_nmn&coupon=TET20",
+      "shortUrl": "https://tnmall.vn/r/tet2025-nmn-719",
+      "referralCode": "MAIANH001",
+      "clicks7d": {"value": 1264, "delta": "+18,9%", "axis": [0, 100, 200, 300], "labels": ["24/01", "25/01", "26/01", "27/01", "28/01", "29/01", "30/01"]}
+    },
+    "recentLinks": {
+      "tableColumns": ["#", "Tên liên kết", "Đối tác", "Chiến dịch", "Lượt nhấp ⇅", "Đơn hàng ⇅", "Chuyển đổi ⇅", "Ngày tạo ⇅"],
+      "rows": [
+        {"name": "NMN 12000 Plus – Sale Tết (Facebook)", "url": "https://tnmall.vn/r/tet2025-nmn", "partner": "Nguyễn Thị Mai Anh", "campaign": "Sale Tết 2025", "clicks": 1264, "orders": 86, "conversion": "6,80%", "createdAt": "30/01/2025 10:24"},
+        {"name": "Combo Spirulina – Review", "url": "https://tnmall.vn/r/combo-spirulina", "partner": "Trần Minh Đức", "campaign": "Ưu đãi Combo Tháng 1", "clicks": 987, "orders": 54, "conversion": "5,47%", "createdAt": "29/01/2025 14:51"},
+        {"name": "Liver EX – KOL Post", "url": "https://tnmall.vn/r/liverex-kol", "partner": "Lê Thu Hương", "campaign": "Ra mắt Liver EX Premium", "clicks": 843, "orders": 37, "conversion": "4,39%", "createdAt": "28/01/2025 09:17"},
+        {"name": "AX21 – TikTok", "url": "https://tnmall.vn/r/ax21-tiktok", "partner": "Phạm Quang Huy", "campaign": "Bùng nổ TikTok Q1", "clicks": 721, "orders": 42, "conversion": "5,83%", "createdAt": "27/01/2025 16:03"},
+        {"name": "Krill Omega-3 – Mini Game", "url": "https://tnmall.vn/r/krill-minigame", "partner": "Đỗ Minh Trang", "campaign": "Mini Game – Quà liền tay", "clicks": 689, "orders": 31, "conversion": "4,50%", "createdAt": "26/01/2025 11:20"}
+      ]
+    }
+  },
+  "products": {
+    "title": "Sản phẩm & chiến dịch Affiliate",
+    "subtitle": "Quản lý danh mục sản phẩm, chương trình khuyến khích và hiệu quả bán hàng",
+    "kpis": [
+      {"label": "Tổng sản phẩm", "value": "42", "delta": "+7,7%"},
+      {"label": "Sản phẩm đang mở Affiliate", "value": "36", "delta": "+12,5%"},
+      {"label": "Chiến dịch đang chạy", "value": "8", "delta": "+33,3%"},
+      {"label": "Tỷ lệ chuyển đổi trung bình", "value": "4,28%", "delta": "+0,8 điểm %"}
+    ],
+    "categoryFilter": ["Tất cả", "NMN", "Krill", "Spirulina", "Liver EX", "AX21"],
+    "campaignStatusFilter": ["Tất cả", "Đang chạy", "Sắp diễn ra", "Đã kết thúc"],
+    "tableColumns": ["#", "Sản phẩm", "SKU", "Giá bán ⇅", "Hoa hồng ⇅", "Tồn kho ⇅", "Tình trạng Affiliate", "Chiến dịch"],
+    "rows": [
+      {"name": "NMN 12000 Plus", "category": "NMN", "sku": "NMN-12000", "price": 2490000, "commissionRate": "18%", "stock": 1258, "affiliateStatus": "Đang mở", "campaign": "Sale Tết 2025"},
+      {"name": "Krill Omega-3 1000mg", "category": "Krill", "sku": "KRL-1000", "price": 1290000, "commissionRate": "15%", "stock": 2846, "affiliateStatus": "Đang mở", "campaign": "Sale Tết 2025"},
+      {"name": "Spirulina Organic", "category": "Spirulina", "sku": "SPI-500", "price": 690000, "commissionRate": "12%", "stock": 4903, "affiliateStatus": "Đang mở", "campaign": "Ưu đãi tháng 1"},
+      {"name": "Liver EX Premium", "category": "Liver EX", "sku": "LVX-500", "price": 1390000, "commissionRate": "16%", "stock": 1972, "affiliateStatus": "Đang mở", "campaign": "Sale Tết 2025"},
+      {"name": "AX21 Anti-Aging", "category": "AX21", "sku": "AX21-30", "price": 2890000, "commissionRate": "20%", "stock": 678, "affiliateStatus": "Đang mở", "campaign": "Sale Tết 2025"},
+      {"name": "NMN 6000 Basic", "category": "NMN", "sku": "NMN-6000", "price": 1590000, "commissionRate": "14%", "stock": 960, "affiliateStatus": "Đang mở", "campaign": "—"},
+      {"name": "Krill Oil 500mg", "category": "Krill", "sku": "KRL-500", "price": 890000, "commissionRate": "12%", "stock": 1420, "affiliateStatus": "Đã đóng", "campaign": "—"},
+      {"name": "Spirulina Tablet 1000", "category": "Spirulina", "sku": "SPI-1000", "price": 990000, "commissionRate": "12%", "stock": 2210, "affiliateStatus": "Đang mở", "campaign": "Ưu đãi tháng 1"},
+      {"name": "Liver EX Mini", "category": "Liver EX", "sku": "LVX-250", "price": 790000, "commissionRate": "14%", "stock": 1105, "affiliateStatus": "Đang mở", "campaign": "—"},
+      {"name": "AX21 Anti-Aging 60v", "category": "AX21", "sku": "AX21-60", "price": 5290000, "commissionRate": "20%", "stock": 240, "affiliateStatus": "Đã đóng", "campaign": "—"}
+    ],
+    "footerNote": "Hiển thị 10 sản phẩm mẫu · Giá & tồn kho là projection từ TN MALL (mock) · Tỷ lệ hoa hồng sản phẩm là mẫu chờ duyệt",
+    "campaignPanel": {
+      "selected": "Sale Tết 2025",
+      "status": "Đang chạy",
+      "campaigns": ["Sale Tết 2025", "Ưu đãi Combo Tháng 1", "Ra mắt Liver EX Premium", "Bùng nổ TikTok Q1", "Mini Game – Quà liền tay", "Black Friday 2024"],
+      "period": "01/01/2025 – 30/01/2025",
+      "gmvTarget": 15000000000,
+      "gmvActual": 12850000000,
+      "progressPct": 85.7,
+      "products": ["NMN", "KRILL", "SPIRU", "LIVER", "AX21"],
+      "actions": ["Tạo chiến dịch", "Phân quyền đối tác"]
+    },
+    "productPerformance": {
+      "title": "Hiệu quả bán hàng theo sản phẩm (30 ngày gần nhất)",
+      "items": [
+        {"product": "NMN 12000 Plus", "gmvBn": 2.56, "conversionPct": 4.6},
+        {"product": "Krill Omega-3 1000mg", "gmvBn": 1.78, "conversionPct": 4.1},
+        {"product": "Spirulina Organic", "gmvBn": 1.21, "conversionPct": 3.6},
+        {"product": "Liver EX Premium", "gmvBn": 1.64, "conversionPct": 4.3},
+        {"product": "AX21 Anti-Aging", "gmvBn": 2.21, "conversionPct": 5.1}
+      ],
+      "axes": {"left": {"label": "Doanh số (GMV) tỷ đ", "max": 3.0}, "right": {"label": "Tỷ lệ chuyển đổi", "max": "6%"}}
+    },
+    "topConversion": [
+      {"rank": 1, "product": "AX21 Anti-Aging", "conversionPct": 5.10, "gmv": 2210000000},
+      {"rank": 2, "product": "NMN 12000 Plus", "conversionPct": 4.60, "gmv": 2560000000},
+      {"rank": 3, "product": "Liver EX Premium", "conversionPct": 4.30, "gmv": 1640000000},
+      {"rank": 4, "product": "Krill Omega-3 1000mg", "conversionPct": 4.10, "gmv": 1780000000},
+      {"rank": 5, "product": "Spirulina Organic", "conversionPct": 3.60, "gmv": 1210000000}
+    ],
+    "createCampaignModal": {
+      "title": "Tạo chiến dịch",
+      "fields": [
+        {"label": "Tên chiến dịch *", "type": "text"},
+        {"label": "Bắt đầu", "type": "date"},
+        {"label": "Kết thúc", "type": "date"},
+        {"label": "Mục tiêu GMV (VND)", "type": "number"},
+        {"label": "Mã UTM campaign *", "type": "text", "placeholder": "vd: sale_thang_2"}
+      ],
+      "buttons": ["Hủy", "Tạo"]
+    }
+  },
+  "reports": {
+    "title": "Báo cáo",
+    "subtitle": "Tổng hợp hiệu quả chương trình — dữ liệu demo",
+    "note": "Bộ báo cáo đầy đủ, dự báo và trợ lý AI thuộc phân hệ analytics-ai (sprint sau). Màn hình này chỉ tổng hợp từ dữ liệu demo hiện có.",
+    "kpis": [
+      {"label": "GMV kỳ", "value": "12,85 tỷ ₫"},
+      {"label": "Bút toán ledger", "value": "59"},
+      {"label": "Liên kết đã tạo", "value": "5"},
+      {"label": "Sự kiện audit", "value": "2"}
+    ],
+    "chart": {"title": "Doanh số & đơn hàng", "series": ["Doanh số (GMV)", "Đơn hàng hợp lệ"], "xLabelsSample": ["01/01", "03/01", "05/01", "07/01", "09/01", "11/01", "13/01", "15/01", "17/01", "19/01", "21/01", "23/01", "25/01", "27/01", "29/01"]}
+  },
+  "training": {
+    "title": "Đào tạo",
+    "subtitle": "Học viện đối tác — nội dung đã được duyệt",
+    "note": "Nội dung quảng cáo thực phẩm bảo vệ sức khỏe phải được người chịu trách nhiệm duyệt và có phiên bản. Không khẳng định công dụng phòng/chữa bệnh. Nội dung dưới đây là khung demo.",
+    "courses": [
+      {"badge": "Bắt buộc", "title": "Nhập môn Affiliate TN MALL", "lessons": 6, "version": "1.0", "tag": "demo"},
+      {"badge": "Bắt buộc", "title": "Kiến thức sản phẩm NMN & AX21", "lessons": 8, "version": "1.0", "tag": "demo"},
+      {"badge": "Bắt buộc", "title": "Quy định quảng cáo thực phẩm bảo vệ sức khỏe", "lessons": 4, "version": "1.0", "tag": "demo"},
+      {"badge": "Tự chọn", "title": "Kỹ năng livestream bán hàng", "lessons": 5, "version": "1.0", "tag": "demo"},
+      {"badge": "Tự chọn", "title": "Chăm sóc khách hàng tái mua", "lessons": 3, "version": "1.0", "tag": "demo"}
+    ]
+  },
+  "integration": {
+    "title": "Tích hợp TN MALL",
+    "subtitle": "Adapter đơn hàng, hoàn trả và danh mục sản phẩm",
+    "status": "MOCK",
+    "statusNote": "Trạng thái: MOCK. Chưa có API TN MALL thật. Cần TN MALL cung cấp: tài liệu API, môi trường sandbox, cơ chế ký webhook (HMAC secret), danh sách trạng thái đơn và quy tắc hoàn trả.",
+    "cards": [
+      {"label": "Webhook inbox", "value": "0 sự kiện đã xử lý"},
+      {"label": "Đơn hàng (projection)", "value": "90 đơn mẫu"},
+      {"label": "Sản phẩm (projection)", "value": "10 SKU mẫu"}
+    ],
+    "endpoints": [
+      {"method": "POST", "path": "/webhooks/tnmall", "desc": "Nhận order.created / order.completed / order.refunded (ký HMAC, idempotent theo event.id)"},
+      {"method": "GET", "path": "/integrations/tnmall/orders?since=", "desc": "Đồng bộ bù (pull) khi webhook lỗi"},
+      {"method": "GET", "path": "/integrations/tnmall/products", "desc": "Projection danh mục sản phẩm"},
+      {"method": "POST", "path": "/payouts/{id}/send", "desc": "Gửi lệnh chi qua bank adapter (sandbox)"}
+    ],
+    "actions": ["Mở trình giả lập webhook"]
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "subtitle": "Phân quyền, nhật ký kiểm toán và dữ liệu demo",
+    "actions": ["Khôi phục dữ liệu demo"],
+    "rbac": {
+      "note": "Kiểm tra tại lớp dịch vụ · Đối tác bị giới hạn phạm vi chính mình (chống IDOR)",
+      "columns": ["Quyền", "CEO", "Kế toán", "Vận hành đối tác", "Quản lý chính sách", "Đối tác (cổng đối tác)"],
+      "permissions": [
+        {"label": "Xem tổng quan điều hành", "code": "dashboard.view"},
+        {"label": "Xem đối tác", "code": "partner.view"},
+        {"label": "Sửa/khóa đối tác", "code": "partner.edit"},
+        {"label": "Xác minh hồ sơ", "code": "application.review"},
+        {"label": "Phê duyệt hồ sơ", "code": "application.approve"},
+        {"label": "Xem chính sách", "code": "policy.view"},
+        {"label": "Soạn bản nháp chính sách", "code": "policy.draft"},
+        {"label": "Kích hoạt chính sách", "code": "policy.publish"},
+        {"label": "Quản lý chiến dịch", "code": "campaign.manage"},
+        {"label": "Tạo liên kết cho đối tác", "code": "link.create"},
+        {"label": "Xem khách hàng", "code": "customer.view"},
+        {"label": "Xem đơn hàng", "code": "order.view"},
+        {"label": "Quản lý tích hợp TN MALL", "code": "integration.manage"},
+        {"label": "Xem hoa hồng", "code": "commission.view"},
+        {"label": "Lập đợt chi (maker)", "code": "payout.create"},
+        {"label": "Duyệt đợt chi (checker)", "code": "payout.approve"},
+        {"label": "Xuất bảng kê", "code": "payout.export"},
+        {"label": "Xem nhật ký kiểm toán", "code": "audit.view"},
+        {"label": "Xem số liệu của chính mình", "code": "self.dashboard"},
+        {"label": "Tạo link của chính mình", "code": "self.link.create"},
+        {"label": "Xem hoa hồng của chính mình", "code": "self.commission.view"}
+      ],
+      "matrixNote": "Ô checkmark theo từng vai trò chưa được ghi chi tiết trong khảo sát text; xem ảnh trang để đối chiếu."
+    },
+    "audit": {
+      "title": "Nhật ký kiểm toán (audit trail)",
+      "note": "2 sự kiện · chỉ thêm, không sửa",
+      "columns": ["Thời gian", "Người thực hiện", "Hành động", "Đối tượng", "Chi tiết"],
+      "rows": [
+        {"time": "27/01/2025 14:05", "actor": "Trần Quốc Bảo", "action": "partner.bank.update", "target": "AFF001286", "detail": "Cập nhật thông tin tài khoản ngân hàng (giá trị đã che)"},
+        {"time": "15/01/2025 09:00", "actor": "Triệu Nhung", "action": "policy.publish", "target": "v1.3", "detail": "Kích hoạt chính sách v1.3"}
+      ]
+    },
+    "testCard": {"title": "Kiểm thử", "desc": "Bộ test domain (tiền, ledger, idempotency, maker-checker, RBAC/IDOR, chính sách) chạy trong trình duyệt.", "action": "Mở trang kiểm thử"}
+  },
+  "unsurveyed": [
+    "#/partners sub-items: Hồ sơ đăng ký, Cấp bậc & chính sách",
+    "Partner detail: Chỉnh sửa hồ sơ, Khóa tạm thời, Gửi thông báo modals",
+    "Training course detail",
+    "Integration webhook simulator",
+    "Ctrl+K command palette (only focuses search input observed)"
+  ]
+}

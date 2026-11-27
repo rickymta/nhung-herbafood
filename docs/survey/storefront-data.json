@@ -1,0 +1,256 @@
+{
+  "source": "https://tn-stroke-guard.vercel.app/",
+  "capturedWith": "browser DOM reads (get_page_text, DOM queries); values are as rendered on 2026-11-27",
+  "notes": [
+    "Product list cards are not anchors; detail URL pattern is /products/<uuid>. Only the Ginkgo detail URL was verified.",
+    "category query param (?category=supplement|package|device) did NOT filter: all three URLs rendered the same 11 products in the same order.",
+    "Flash sale slots and product list prices are as rendered at capture time.",
+    "Listing cards show only the sale price plus a -N% badge. Every originalPrice on the non-Ginkgo products is DERIVED (sale / (1 - pct)), not read from the page; verify before relying on it.",
+    "Listing cards for the 'Nattokinase Premium' and 'Citicoline' entries show no pack/variant detail beyond the text captured; the listing and detail names differ (e.g. Nattokinase 3000FU Orihiro is on the detail page related list).",
+    "Package variants: listing shows 'Gói tiêu chuẩn' / 'Gói VIP' toggles, but the VIP price is not separately rendered on the card, so variant prices of null mean unknown.",
+    "Checkout form (after 'Tiến hành đặt hàng (Xác thực OTP)') was NOT opened: it likely triggers an OTP SMS/Zalo send, so it was not clicked."
+  ],
+  "categories": [
+    {"key": "supplement", "label": "Thực phẩm chức năng", "url": "/products?category=supplement"},
+    {"key": "package", "label": "Gói khám tầm soát", "url": "/products?category=package"},
+    {"key": "device", "label": "Trang thiết bị y tế & Máy đo AFib", "url": "/products?category=device"}
+  ],
+  "products": [
+    {
+      "slug": "ginkgo-biloba-hoat-huyet-nao",
+      "id": "b0000000-0000-0000-0000-000000000006",
+      "detailUrl": "/products/b0000000-0000-0000-0000-000000000006",
+      "name": "Viên uống Ginkgo Biloba chuẩn hóa Orihiro Nhật Bản hỗ trợ tăng tuần hoàn máu não, giảm hoa mắt chóng mặt",
+      "shortName": "Ginkgo Biloba Hoạt Huyết Não",
+      "brand": "Orihiro",
+      "category": "supplement",
+      "originCountry": "Nhật Bản",
+      "price": 350000,
+      "originalPrice": 410000,
+      "discountPercent": 15,
+      "unit": "Hộp",
+      "variants": [
+        {"label": "Hộp 3 Vỉ x 10 Viên", "price": 350000}
+      ],
+      "unitOptions": ["Hộp", "Vỉ", "Viên"],
+      "packSize": "Hộp 3 Vỉ x 10 Viên",
+      "image": "https://tn-stroke-guard.vercel.app/images/products/prod-ginkgo.jpg",
+      "extraImagesLabel": "Xem thêm 2 ảnh",
+      "badges": ["★ CHÍNH HÃNG", "100% Chính Hãng (Kiểm định Bộ Y Tế)", "Đổi Trả 30 Ngày", "Giao Nhanh 2H (nội thành các tỉnh)"],
+      "soldCount": null,
+      "stockLimit": null,
+      "stockStatus": "Sẵn hàng tại nhà thuốc",
+      "sku": "B0000000",
+      "rating": 5.0,
+      "reviewCount": 98,
+      "commentCount": 42,
+      "freeShipping": "Miễn phí vận chuyển toàn quốc",
+      "description": "Chiết xuất từ lá bạch quả Ginkgo Biloba chuẩn hóa Nhật Bản giúp giãn mạch vi tuần hoàn, tăng lưu lượng oxy lên não, giảm nhanh triệu chứng tiền đình.",
+      "benefits": [
+        "Tăng lưu lượng tưới máu não và tế bào tiền đình",
+        "Giảm đau đầu, hoa mắt, chóng mặt và mất ngủ",
+        "Tăng cường khả năng tập trung và trí nhớ"
+      ],
+      "ingredients": null,
+      "usage": null,
+      "storage": "Bảo quản chuẩn kho GPP nhiệt độ dưới 25°C",
+      "pharmacistHotline": "1900 1234 (24/7)",
+      "policyBullets": [
+        "Được mở hộp kiểm tra hàng trước khi thanh toán.",
+        "Bảo quản chuẩn kho GPP nhiệt độ dưới 25°C.",
+        "Xuất hóa đơn điện tử VAT đầy đủ khi yêu cầu."
+      ],
+      "relatedProducts": ["Citicoline CDP Choline (485.000đ)", "Nattokinase 3000FU Orihiro (680.000đ)", "Omega-3 EPA & DHA Orihiro (525.000đ)", "Coenzyme Q10 Cardioprotect Noguchi (420.000đ)"]
+    },
+    {"slug": "omron-hem-7156", "name": "Máy đo huyết áp bắp tay Omron HEM-7156", "brand": "Omron", "category": "device", "originCountry": "Nhật Bản", "price": 849000, "image": "https://tn-stroke-guard.vercel.app/images/products/prod-omron-bp.jpg", "badges": []},
+    {"slug": "coq10-cardioprotect", "name": "Coenzyme Q10 Cardioprotect", "brand": "Noguchi", "category": "supplement", "originCountry": "Nhật Bản", "price": 420000, "originalPrice": 480000, "discountPercent": 13, "unit": "Hộp", "packSize": "Hộp 60 Viên", "image": "https://tn-stroke-guard.vercel.app/images/products/prod-coq10.jpg", "description": "Viên uống Coenzyme Q10 Cardioprotect Noguchi Nhật Bản hỗ trợ tăng sức bền cơ tim & điều hòa huyết áp"},
+    {"slug": "tim-soat-dot-quy-tieu-chuan", "name": "Tầm Soát Đột Quỵ Tiêu Chuẩn", "brand": null, "category": "package", "originCountry": "Việt Nam", "price": 2500000, "originalPrice": 2900000, "discountPercent": 14, "unit": "Gói tiêu chuẩn", "variants": [{"label": "Gói tiêu chuẩn", "price": 2500000}, {"label": "Gói VIP", "price": null}], "packSize": "Gói 12 Danh mục khám", "image": "https://tn-stroke-guard.vercel.app/images/products/prod-mri-package.jpg", "description": "Gói 12 danh mục khám"},
+    {"slug": "tim-soat-dot-quy-toan-dien-vip", "name": "Tầm Soát Đột Quỵ Toàn Diện VIP", "brand": null, "category": "package", "originCountry": "Việt Nam", "price": 8900000, "originalPrice": 10200000, "discountPercent": 13, "unit": "Gói VIP", "variants": [{"label": "Gói VIP", "price": 8900000}], "packSize": "Trọn gói VIP + Xe đưa đón", "image": "https://tn-stroke-guard.vercel.app/images/products/prod-mri-package.jpg", "description": "Trọn gói VIP + Xe đưa đón"},
+    {"slug": "tim-soat-dot-quy-chuyen-sau", "name": "Tầm Soát Đột Quỵ Chuyên Sâu", "brand": null, "category": "package", "originCountry": "Việt Nam", "price": 4800000, "originalPrice": 5500000, "discountPercent": 13, "unit": "Gói tiêu chuẩn", "variants": [{"label": "Gói tiêu chuẩn", "price": 4800000}, {"label": "Gói VIP", "price": null}], "packSize": "Gói Chụp MRI 3.0T Mạch Não", "image": "https://tn-stroke-guard.vercel.app/images/products/prod-mri-package.jpg", "description": "Gói Chụp MRI 3.0T Mạch Não"},
+    {"slug": "nattokinase-premium", "name": "Viên Uống Nattokinase Premium", "brand": null, "category": "supplement", "originCountry": "Nhật Bản", "price": 680000, "originalPrice": 750000, "discountPercent": 9, "unit": "Hộp", "packSize": "Hộp 60 Viên", "image": "https://tn-stroke-guard.vercel.app/images/products/prod-nattokinase.jpg", "description": "Nattokinase hỗ trợ tan cục máu đông (listing); detail card: Viên uống Nattokinase Premium 3000FU Orihiro"},
+    {"slug": "citicoline-cdp-choline", "name": "Viên uống Citicoline CDP Choline Nichiei Bussan Nhật Bản hỗ trợ phục hồi dẫn truyền thần kinh não bộ", "brand": "Nichiei Bussan", "category": "supplement", "originCountry": "Nhật Bản", "price": 485000, "originalPrice": 580000, "discountPercent": 16, "unit": "Hộp", "packSize": "Hộp 60 Viên", "image": "https://tn-stroke-guard.vercel.app/images/products/prod-citicoline.svg"},
+    {"slug": "omega-3-epa-dha-orihiro", "name": "Viên uống Dầu cá tinh khiết Omega-3 EPA & DHA Orihiro Nhật Bản hỗ trợ giảm mỡ máu, bền thành mạch", "brand": "Orihiro", "category": "supplement", "originCountry": "Nhật Bản", "price": 525000, "originalPrice": 700000, "discountPercent": 25, "unit": "Lọ", "packSize": "Lọ 180 Viên nang mềm", "image": "https://tn-stroke-guard.vercel.app/images/products/prod-omega3.jpg"},
+    {"slug": "magnesium-vitamin-b-complex-maruman", "name": "Viên uống Magnesium & Vitamin B-Complex Maruman Nhật Bản hỗ trợ ổn định dẫn truyền thần kinh, thư giãn mạch máu", "brand": "Maruman", "category": "supplement", "originCountry": "Nhật Bản", "price": 285000, "unit": "Hộp", "packSize": "Viên", "image": "https://tn-stroke-guard.vercel.app/images/products/prod-magnesium.svg"},
+    {"slug": "omron-hem-7120", "name": "Máy đo huyết áp bắp tay tự động Omron HEM-7120 Nhật Bản cảnh báo rối loạn nhịp tim & tăng huyết áp", "brand": "Omron", "category": "device", "originCountry": "Nhật Bản", "price": 890000, "image": "https://tn-stroke-guard.vercel.app/images/products/prod-omron-bp.jpg"}
+  ],
+  "cartSummaryExample": {"subtotal": 350000, "shippingEstimate": 30000, "total": 380000, "freeShippingThreshold": 500000, "note": "Mua thêm 150.000đ để được Miễn phí giao hàng tận nhà (at subtotal 350.000đ)"},
+  "flashSaleSlots": [
+    {"time": "08:00 - 22:00, 27/11", "status": "Đang diễn ra"},
+    {"time": "08:00 - 22:00, 28/11", "status": "Sắp diễn ra"},
+    {"time": "08:00 - 22:00, 29/11", "status": "Sắp diễn ra"}
+  ],
+  "flashSaleCountdown": "Kết thúc sau 06:08:35 (rendered 06 : 08 : 35)",
+  "articles": [
+    {"slug": "phan-biet-dot-quy-thieu-mau-nao-xuat-huyet-nao-va-tia", "title": "Phân biệt Đột quỵ Nhồi máu não, Xuất huyết não và Cơn thiếu máu não thoáng qua (TIA)", "topic": "Tổng quan & Phân loại", "readTime": "5 phút đọc", "excerpt": "85% ca đột quỵ là nhồi máu não do tắc mạch, 15% do vỡ mạch xuất huyết não. Hiểu đúng bản chất từng thể bệnh giúp tránh sai lầm chí mạng khi xử trí ban đầu.", "reviewedBy": "Hội đồng Chuyên môn Tim mạch – Đột quỵ", "image": "https://tn-stroke-guard.vercel.app/images/hero/lc-subbanner-screening.jpg"},
+    {"slug": "kiem-soat-tang-huyet-ap-yeu-to-nguy-co-so-1", "title": "Tăng huyết áp: \"Kẻ giết người thầm lặng\" đứng sau hơn 50% ca đột quỵ", "topic": "Kiểm soát Bệnh nền", "readTime": "4 phút đọc", "excerpt": "Kiểm soát tốt huyết áp tâm thu dưới 130/80 mmHg theo khuyến cáo bác sĩ giúp giảm tới 35–40% nguy cơ tai biến mạch máu não.", "reviewedBy": "Chuyên khoa Nội Tim mạch", "updatedAt": "08/06/2026", "keyPoints": ["Huyết áp ≥ 140/90 mmHg kéo dài làm tổn thương lớp nội mạc động mạch, thúc đẩy mảng xơ vữa và phình mạch não.", "Tuyệt đối không tự ý ngưng thuốc huyết áp khi thấy huyết áp đã về bình thường.", "Đo huyết áp tại nhà 2 lần/ngày (sáng sau khi thức dậy và tối trước khi ngủ) với tư thế ngồi nghỉ 5 phút."], "ctaText": "Làm bài đánh giá ngay →", "image": "https://tn-stroke-guard.vercel.app/images/hero/lc-short-bp-check.jpg"},
+    {"slug": "rung-nhi-va-nguy-co-huyet-khoi-tu-tim-len-nao", "title": "Rung nhĩ (AFib) làm tăng gấp 5 lần nguy cơ đột quỵ nặng như thế nào?", "topic": "Kiểm soát Bệnh nền", "readTime": "5 phút đọc", "excerpt": "Khi tâm nhĩ rung hỗn loạn thay vì co bóp nhịp nhàng, máu ứ đọng tại tiểu nhĩ trái tạo cục máu đông lớn trôi thẳng lên động mạch não.", "reviewedBy": "Chuyên khoa Nhịp tim học", "image": "https://tn-stroke-guard.vercel.app/images/hero/lc-healthcheck-doctors.jpg"},
+    {"slug": "dai-thao-duong-va-roi-loan-mo-mau-bo-doi-xo-vua-mach", "title": "Đái tháo đường & Mỡ máu LDL-C cao: Bộ đôi thúc đẩy xơ vữa động mạch cảnh", "topic": "Kiểm soát Bệnh nền", "readTime": "4 phút đọc", "excerpt": "Người mắc đái tháo đường có nguy cơ đột quỵ cao gấp 2–4 lần. Kiểm soát đồng thời HbA1c và LDL-Cholesterol là chìa khóa bảo vệ mạch máu não.", "reviewedBy": "Chuyên khoa Nội tiết – Đái tháo đường", "image": "https://tn-stroke-guard.vercel.app/images/hero/lc-health-campaign.jpg"},
+    {"slug": "8-nguyen-tac-vang-lifes-essential-8-bao-ve-mach-mau", "title": "8 Nguyên tắc Vàng Life's Essential 8 của Hiệp hội Tim mạch Hoa Kỳ (AHA)", "topic": "Dinh dưỡng & Lối sống", "readTime": "6 phút đọc", "excerpt": "Chỉ cần duy trì 150 phút vận động/tuần, giảm lượng muối dưới 5g/ngày, bỏ thuốc lá và ngủ đủ 7–8 tiếng giúp giảm tới 80% ca đột quỵ có thể phòng ngừa.", "reviewedBy": "Chuyên gia Dinh dưỡng & Dự phòng", "image": "https://tn-stroke-guard.vercel.app/images/hero/lc-healthcheck-doctors.jpg"},
+    {"slug": "cham-soc-phuc-hoi-chuc-nang-6-thang-dau-sau-dot-quy", "title": "Lộ trình phục hồi chức năng 6 tháng đầu sau đột quỵ & Phòng ngừa tái phát", "topic": "Phục hồi Sau Đột quỵ", "readTime": "5 phút đọc", "excerpt": "3 đến 6 tháng đầu sau tai biến là giai đoạn tính mềm dẻo thần kinh cao nhất.", "reviewedBy": "Chuyên khoa Phục hồi chức năng", "image": "https://tn-stroke-guard.vercel.app/images/prevention/prev-seniors.jpg"}
+  ],
+  "educationTopics": ["Tất cả chuyên đề", "Tổng quan & Phân loại", "Kiểm soát Bệnh nền", "Dinh dưỡng & Lối sống", "Phục hồi Sau Đột quỵ"],
+  "homeFeaturedArticles": [
+    {"kicker": "TN STROKE GUARD · FRAMINGHAM · AHA LE8", "heading": "Vì Trái Tim & Trí Não Việt Nam", "subheading": "CHỦ ĐỘNG TẦM SOÁT SỚM — KHÔNG CÒN NỖI LO ĐỘT QUỴ", "tag": "Truyền thông Y khoa", "body": "TN Stroke Guard cùng Hội đồng Chuyên gia Tim mạch – Thần kinh triển khai chương trình tầm soát sớm nguy cơ đột quỵ 10 năm miễn phí cho cộng đồng"},
+    {"kicker": "KIỂM SOÁT HUYẾT ÁP", "heading": "ĐO ĐÚNG GIỜ AN TÂM MẠCH NÃO", "tag": "Tin tức sức khỏe", "body": "“Bác sĩ ngay đây, An tâm mạch não!”: Hướng dẫn kiểm soát huyết áp dưới 130/80 mmHg giảm 40% nguy cơ đột quỵ"},
+    {"kicker": "TẦM SOÁT RUNG NHĨ", "heading": "NGỪA CỤC MÁU ĐÔNG TỪ TIM LÊN NÃO", "tag": "Phòng chữa bệnh", "body": "Chủ động sàng lọc sớm Rung nhĩ (AFib) & huyết khối từ tim bằng thang đo quốc tế CHA₂DS₂-VASc ngay tại nhà"},
+    {"kicker": "BỆNH LÝ NỀN", "heading": "KIỂM SOÁT ĐƯỜNG HUYẾT & MỠ MÁU", "tag": "Người cao tuổi"},
+    {"kicker": "DINH DƯỠNG DỰ PHÒNG", "heading": "8 NGUYÊN TẮC VÀNG BẢO VỆ MẠCH MÁU", "tag": "Dinh dưỡng"},
+    {"kicker": "CHĂM SÓC SAU TAI BIẾN", "heading": "PHỤC HỒI VẬN ĐỘNG 6 THÁNG ĐẦU", "tag": "Phục hồi sau tai biến"}
+  ],
+  "videos": [
+    {"title": "Tăng huyết áp sáng sớm: Vì sao dễ kích hoạt cơn đột quỵ?", "overlayTitle": "TĂNG ÁP SÁNG SỚM", "subtitle": "Vì sao dễ kích hoạt cơn đột quỵ?", "tag": "RADAR SỨC KHỎE", "image": null},
+    {"title": "Cơn tê yếu 5 phút: Cảnh báo đỏ trước đột quỵ thật sự!", "overlayTitle": "CƠN TÊ YẾU 5 PHÚT", "subtitle": "Cảnh báo đỏ trước đột quỵ thật sự!", "tag": "RADAR SỨC KHỎE", "image": null},
+    {"title": "Người bị rung nhĩ nguy cơ đột quỵ tăng gấp mấy lần?", "overlayTitle": "NGƯỜI BỊ RUNG NHĨ NGUY CƠ ĐỘT QUỴ TĂNG GẤP MẤY LẦN?", "subtitle": "Người bị rung nhĩ (AFib) có nguy cơ đột quỵ cao gấp mấy lần?", "tag": "2 PHÚT BÁC SĨ", "image": null},
+    {"title": "Nghi đột quỵ có nên ngậm thuốc hạ áp tại nhà?", "overlayTitle": "NGHI ĐỘT QUỴ CÓ NÊN NGẬM THUỐC HẠ ÁP TẠI NHÀ?", "subtitle": "Nghi ngờ đột quỵ cấp có nên tự ngậm thuốc hạ huyết áp tại nhà?", "tag": "2 PHÚT BÁC SĨ", "image": null},
+    {"title": "Chỉ số mỡ máu LDL bao nhiêu dễ gây hẹp mạch cảnh?", "overlayTitle": "CHỈ SỐ MỠ MÁU LDL BAO NHIÊU DỄ GÂY HẸP MẠCH CẢNH?", "subtitle": "Chỉ số mỡ máu xấu LDL-C bao nhiêu cần siêu âm động mạch cảnh?", "tag": "2 PHÚT BÁC SĨ", "image": null},
+    {"title": "Chích máu 10 đầu ngón tay khi đột quỵ: Đúng hay sai?", "overlayTitle": "CHÍCH MÁU 10 ĐẦU NGÓN TAY KHI ĐỘT QUỴ: ĐÚNG HAY SAI?", "subtitle": "Chích máu 10 đầu ngón tay khi gặp người đột quỵ: Đúng hay sai lầm?", "tag": "2 PHÚT BÁC SĨ", "image": null},
+    {"title": "Giảm một nửa muối mỗi ngày hạ được bao nhiêu mmHg?", "overlayTitle": "GIẢM BỚT MỘT NỬA MUỐI MỖI NGÀY HẠ ĐƯỢC BAO NHIÊU MMHG?", "subtitle": "Ăn nhạt giảm muối theo chế độ DASH giúp hạ huyết áp ra sao?", "tag": "2 PHÚT BÁC SĨ", "image": null}
+  ],
+  "befast": [
+    {"letter": "B", "word": "BALANCE", "title": "Mất thăng bằng đột ngột", "description": "Choáng váng dữ dội, đi đứng loạng choạng, mất khả năng phối hợp vận động hoặc ngã khuỵu không rõ nguyên nhân.", "checkHow": "Quan sát xem người bệnh có thể đứng vững hoặc bước thẳng hàng hay không.", "action": "Nhấn để đánh dấu nếu gặp biểu hiện này"},
+    {"letter": "E", "word": "EYES", "title": "Rối loạn thị giác", "description": "Mờ mắt đột ngột ở một hoặc cả hai mắt, nhìn đôi (song thị) hoặc mất một phần vùng nhìn.", "checkHow": "Hỏi người bệnh có nhìn rõ các ngón tay trước mặt hoặc bị nhòe hình hay không.", "action": "Nhấn để đánh dấu nếu gặp biểu hiện này"},
+    {"letter": "F", "word": "FACE", "title": "Méo lệch khuôn mặt", "description": "Một bên cơ mặt bị xệ xuống, nhân trung lệch, tê bì nửa mặt hoặc nụ cười không cân đối.", "checkHow": "Yêu cầu người bệnh mỉm cười hoặc nhe răng để kiểm tra độ cân xứng hai bên mép.", "action": "Nhấn để đánh dấu nếu gặp biểu hiện này"},
+    {"letter": "A", "word": "ARM", "title": "Yếu hoặc liệt tay chân", "description": "Đột ngột tê bì, yếu sức hoặc không thể nhấc nổi một bên cánh tay hay chân, cầm nắm rơi đồ vật.", "checkHow": "Yêu cầu giơ đồng thời hai tay ngang vai trong 10 giây xem có tay nào rơi thõng xuống không.", "action": "Nhấn để đánh dấu nếu gặp biểu hiện này"},
+    {"letter": "S", "word": "SPEECH", "title": "Nói ngọng, khó nói", "description": "Nói lắp, dính chữ, tìm từ khó khăn, nói không rõ nghĩa hoặc không hiểu câu hỏi đơn giản.", "checkHow": "Yêu cầu lặp lại một câu ngắn rõ ràng như: \"Hôm nay trời nắng đẹp\".", "action": "Nhấn để đánh dấu nếu gặp biểu hiện này"},
+    {"letter": "T", "word": "TIME", "title": "Thời gian vàng cấp cứu", "description": "Nếu xuất hiện DÙ CHỈ 1 trong 5 dấu hiệu trên, hãy gọi ngay 115 và ghi nhớ chính xác thời điểm khởi phát triệu chứng.", "checkHow": "Ghi lại giờ phút xuất hiện triệu chứng đầu tiên để báo cho bác sĩ cấp cứu tiêu sợi huyết.", "action": "Nhấn để đánh dấu nếu gặp biểu hiện này"}
+  ],
+  "emergencyTab": {
+    "actions": ["Gọi ngay tổng đài Cấp cứu 115 hoặc đưa thẳng tới bệnh viện gần nhất có Đơn vị Đột quỵ.", "Đặt người bệnh nằm nghiêng an toàn (nghiêng 30–45 độ), đầu hơi kê cao nhẹ để tránh sặc đường thở.", "Nới lỏng cổ áo, cà vạt, thắt lưng để giúp hô hấp thông thoáng.", "Ghi nhớ chính xác thời điểm người bệnh bắt đầu có triệu chứng bất thường đầu tiên.", "Mang theo danh sách các thuốc đang uống (đặc biệt thuốc huyết áp, tiểu đường, chống đông máu)."],
+    "doNots": ["TUYỆT ĐỐI KHÔNG chích máu 10 đầu ngón tay, dái tai hay cạo gió, bấm huyệt.", "KHÔNG tự ý cho uống thuốc hạ huyết áp ngậm dưới lưỡi hay bất kỳ viên thuốc truyền miệng nào.", "KHÔNG cho người bệnh ăn hoặc uống nước khi đang lơ mơ, nói khó hoặc nuốt nghẹn.", "KHÔNG chờ đợi \"nằm nghỉ xem có tự khỏi không\" ngay cả khi triệu chứng thoáng qua rồi giảm (cơn TIA)."]
+  },
+  "preventionByAge": [
+    {"group": "NGƯỜI TRẺ (18 – 39 TUỔI)", "image": "https://tn-stroke-guard.vercel.app/images/prevention/prev-young-adult.jpg", "items": ["Kiểm soát thức khuya & căng thẳng kéo dài", "Ngưng thuốc lá, thuốc lá điện tử & rượu bia", "Giảm đồ ăn nhanh, trà sữa & mỡ nội tạng", "Tầm soát dị dạng mạch não khi đau đầu mạn"], "cta": "Tìm hiểu thêm"},
+    {"group": "TUỔI TRUNG NIÊN (40 – 59 TUỔI)", "image": "https://tn-stroke-guard.vercel.app/images/prevention/prev-middle-age.jpg", "items": ["Theo dõi huyết áp định kỳ dưới 130/80 mmHg", "Xét nghiệm mỡ máu LDL-C & đường huyết đói", "Lưu ý nội tiết tiền mãn kinh & huyết áp ở nữ", "Duy trì 150 phút vận động thể lực mỗi tuần"], "cta": "Tìm hiểu thêm"},
+    {"group": "NGƯỜI CAO TUỔI (TRÊN 60 TUỔI)", "image": "https://tn-stroke-guard.vercel.app/images/prevention/prev-seniors.jpg", "items": ["Đo huyết áp sáng – tối & uống thuốc đúng giờ", "Sàng lọc Rung nhĩ (AFib) ngừa huyết khối tim", "Siêu âm Doppler động mạch cảnh định kỳ", "Phòng co mạch khi trời trở lạnh hoặc tắm đêm"], "cta": "Tìm hiểu thêm"},
+    {"group": "TRẺ EM & THANH THIẾU NIÊN", "image": "https://tn-stroke-guard.vercel.app/images/prevention/prev-children.jpg", "items": ["Hình thành thói quen ăn nhạt, giảm đồ mặn", "Phòng ngừa thừa cân, béo phì học đường", "Sàng lọc sớm bệnh tim bẩm sinh & rối loạn đông máu", "Nhận biết dấu hiệu B.E.F.A.S.T ở trẻ nhỏ"], "cta": "Tìm hiểu thêm"}
+  ],
+  "assessmentGeneral": {
+    "route": "/assessment/general",
+    "code": "PH-02.1",
+    "title": "Đánh giá Nguy cơ Đột quỵ Toàn diện",
+    "subtitle": "Kết hợp 3 thang đo quốc tế: Framingham (10 năm) · INTERSTROKE · AHA Life's Essential 8",
+    "steps": ["Hồ sơ hành chính", "Câu hỏi lâm sàng & lối sống"],
+    "step1Fields": [
+      {"label": "Họ và tên người tầm soát *", "name": "fullName", "placeholder": "Ví dụ: Nguyễn Văn An", "type": "text", "required": true},
+      {"label": "Số điện thoại liên hệ *", "name": "phone", "placeholder": "0901 234 567", "type": "text", "required": true},
+      {"label": "Năm sinh *", "name": "birthYear", "placeholder": "Ví dụ: 1965", "type": "text", "required": true},
+      {"label": "Giới tính sinh học *", "type": "toggle", "options": ["Nam giới (Hệ số chuẩn nam)", "Nữ giới (Hệ số chuẩn nữ)"]},
+      {"label": "Đồng ý Điều khoản & Chính sách bảo mật dữ liệu y tế *", "name": "agreeConsent", "type": "checkbox", "required": true}
+    ],
+    "step1Button": "Tiếp tục vào câu hỏi sàng lọc →",
+    "step1PrivacyNote": "Mục đích thu thập & Bảo mật thông tin (Nghị định 13/2023/NĐ-CP). Thông tin hành chính & y tế chỉ dùng để hiệu chỉnh thuật toán nguy cơ lâm sàng (Framingham, CHA₂DS₂-VASc) và lưu tạm thời trong phiên trình duyệt của bạn.",
+    "step2": "NOT CAPTURED: questions and options were not reachable without entering personal data (name/phone/birth year), which was not done.",
+    "questions": [],
+    "resultBands": null,
+    "scoringFrameworks": ["Framingham Stroke Risk (2017): xác suất đột quỵ 10 năm (%)", "AHA Life's Essential 8 (2022): điểm 0–100", "INTERSTROKE Lifestyle Index: yếu tố lối sống có thể điều chỉnh"],
+    "disclaimer": "Đây là công cụ sàng lọc tham khảo dựa trên hướng dẫn lâm sàng quốc tế, không thay thế cho chẩn đoán trực tiếp của bác sĩ chuyên khoa.",
+    "crossSell": "Bạn đã được chẩn đoán Rung nhĩ? → Chuyển sang Tầm soát Rung nhĩ →"
+  },
+  "assessmentAfib": {
+    "route": "/assessment/afib",
+    "code": "PH-02.2",
+    "title": "Tầm soát Huyết khối Rung nhĩ (CHA₂DS₂-VASc)",
+    "subtitle": "5 câu hỏi bệnh sử kết hợp tự động tính điểm Tuổi & Giới tính theo khuyến cáo ESC",
+    "steps": ["Hồ sơ hành chính (Tuổi & Giới)", "5 câu hỏi bệnh sử CHA₂DS₂-VASc"],
+    "step1Fields": "Same as assessmentGeneral.step1Fields (fullName, phone, birthYear, sex toggle, consent checkbox)",
+    "questions": [],
+    "questionsNote": "NOT CAPTURED: 5 history questions gated behind step 1 (personal data). Scoring structure captured below.",
+    "scoreStructure": [
+      {"key": "C", "label": "Suy tim sung huyết", "points": 1},
+      {"key": "H", "label": "Tăng huyết áp", "points": 1},
+      {"key": "A2", "label": "Tuổi ≥ 75 (tự tính)", "points": 2},
+      {"key": "D", "label": "Đái tháo đường", "points": 1},
+      {"key": "S2", "label": "Tiền sử Đột quỵ / TIA", "points": 2},
+      {"key": "V", "label": "Bệnh mạch máu", "points": 1},
+      {"key": "A", "label": "Tuổi 65–74", "points": 1},
+      {"key": "Sc", "label": "Giới nữ", "points": 1}
+    ],
+    "scoreRange": "0 – 9",
+    "disclaimer": "Thang điểm CHA₂DS₂-VASc dùng để ước tính nguy cơ đột quỵ ở người rung nhĩ. Tuyệt đối không tự ý dùng hoặc ngưng thuốc chống đông khi chưa có chỉ định bác sĩ.",
+    "crossSell": "Muốn đánh giá cả lối sống & mỡ máu? → Làm thêm Bài Đánh giá Toàn diện →"
+  },
+  "resultsPage": {
+    "route": "/results",
+    "code": "PH-02.3",
+    "title": "Tra Cứu & Lịch Sử Phiên Tầm Soát",
+    "lookupInput": "Tra cứu báo cáo đã lưu bằng Mã phiên (Session ID) hoặc Link chia sẻ",
+    "lookupButton": "Mở báo cáo →",
+    "sessionCountLabel": "Kết quả thực hiện trong phiên này (0)",
+    "emptyState": "Chưa có bài đánh giá nào trong phiên hiện tại",
+    "ctas": ["+ Đánh giá Toàn diện", "+ Tầm soát Rung nhĩ", "Làm Bài Test Toàn diện"]
+  },
+  "orderLookup": {
+    "route": "/orders/lookup",
+    "code": "PH-04.6",
+    "title": "Kiểm Tra Trạng Thái Đơn Hàng",
+    "description": "Nhập Mã đơn hàng (ví dụ: TNSG-123456) hoặc Số điện thoại đặt hàng để kiểm tra tiến độ xử lý.",
+    "emptyMessage": "Chưa tìm thấy đơn hàng nào khớp thông tin",
+    "helperText": "Nếu bạn vừa đặt mua qua tổng đài Zalo OA, dược sĩ sẽ gửi mã vận đơn trực tiếp tới số điện thoại của bạn.",
+    "cta": "Đến Nhà thuốc & Gói khám →"
+  },
+  "downloadApp": {
+    "route": "/download-app",
+    "code": "PH-06",
+    "title": "Ứng dụng Chăm sóc Sức khỏe Chủ động TN Mall",
+    "storeBadges": ["App Store", "Google Play"],
+    "memberPerks": ["Đồng bộ lịch sử tầm soát đột quỵ & sổ đo huyết áp cá nhân.", "Nhận Voucher ưu đãi sản phẩm bảo vệ mạch máu & gói khám MRI.", "Kết nối trực tiếp Dược sĩ & Chuyên gia tim mạch 24/7."],
+    "features": ["Theo dõi Chỉ số Sinh học", "Mua sắm Dược phẩm Chính hãng", "Tích điểm Đổi Gói khám"]
+  },
+  "admin": {"route": "/admin/login", "title": "CỔNG QUẢN TRỊ NỘI BỘ", "brand": "TNStrokeGuard Admin", "fields": ["Tài khoản / Email quản trị", "Mật khẩu"], "buttons": ["Đăng nhập Quản trị →", "⚡ Đăng nhập Thử nghiệm (Vào thẳng Dashboard)"], "link": "← Quay về Giao diện Người dùng (Guest WebApp)", "note": "Not submitted. The 'Đăng nhập Thử nghiệm' button bypasses login: do not click it casually."},
+  "navMenu": [
+    {"label": "Trang chủ", "href": "/"},
+    {"label": "Tầm soát", "href": "/assessment", "dropdown": ["Test Đột quỵ 10 năm → /assessment/general", "Tầm soát Rung nhĩ → /assessment/afib", "Thực phẩm bảo vệ → /products?category=supplement", "Dấu hiệu B.E.F.A.S.T → /symptoms", "Gói khám tầm soát → /products?category=package", "Góc sức khỏe Y khoa → /education"]},
+    {"label": "B.E.F.A.S.T", "href": "/symptoms"},
+    {"label": "Nhà thuốc", "href": "/products", "dropdown": ["Thực phẩm chức năng mạch não → /products?category=supplement", "Gói khám tầm soát đột quỵ → /products?category=package", "Thuốc dự phòng tim mạch → /products?category=supplement", "Chăm sóc sau tai biến → /education?topic=recovery", "Trang thiết bị y tế & Máy đo AFib → /products?category=device", "Đặt thuốc & Gói khám online → /products"]},
+    {"label": "Kết quả tầm soát", "href": "/results"},
+    {"label": "Tra cứu đơn hàng & lịch hẹn", "href": "/orders/lookup"},
+    {"label": "Tải ứng dụng", "href": "/download-app"},
+    {"label": "Giỏ hàng", "href": "/cart", "badge": "count"}
+  ],
+  "topBar": {"left": ["Tư vấn ngay: 1900 6789 (tel:19006789)", "Cấp cứu Đột quỵ: 115 (tel:115)"], "right": ["Đăng nhập Zalo (https://zalo.me/0933991990)", "Tải ứng dụng → /download-app"]},
+  "footer": {
+    "brandBlock": {"title": "TN STROKE GUARD", "subtitle": "FRAMINGHAM · AHA LE8", "tagline": "ĐỒNG HÀNH DỰ PHÒNG ĐỘT QUỴ", "hotline": "19006789", "hotlineLabel": "TỔNG ĐÀI (8:00-22:00)"},
+    "columns": [
+      {"title": "VỀ CHÚNG TÔI", "links": [["Giới thiệu hệ thống", "/"], ["Hệ thống cơ sở & nhà thuốc", "/products"], ["Giấy phép hoạt động y tế", "/terms"], ["Quy chế hoạt động WebApp", "/terms"], ["Đội ngũ chuyên môn y khoa", "/education"], ["Tin tức & Chiến dịch cộng đồng", "/education"]]},
+      {"title": "DANH MỤC", "links": [["Trung tâm Tầm soát TNStrokeGuard", "/assessment/general"], ["Góc sức khỏe Tim mạch - Đột quỵ", "/education"], ["Đánh giá Đột quỵ Toàn diện 10 năm", "/assessment/general"], ["Tầm soát Rung nhĩ (AFib)", "/assessment/afib"], ["Hồ sơ & Tra cứu Kết quả tầm soát", "/results"], ["6 Dấu hiệu vàng B.E.F.A.S.T", "/symptoms"], ["Hướng dẫn sơ cứu Giờ vàng 115", "/symptoms?tab=emergency"]]},
+      {"title": "TÌM HIỂU THÊM", "links": [["Chính sách đặt cọc & gói khám", "/refund-policy"], ["Chính sách nội dung y khoa", "/education"], ["Chính sách đổi trả thuốc 30 ngày", "/refund-policy"], ["Chính sách giao nhận dược phẩm", "/cart"], ["Chính sách bảo mật dữ liệu (NĐ 13)", "/privacy"], ["Chính sách Cookie độc lập", "/cookie-policy"], ["Kiểm tra đơn hàng điện tử", "/orders/lookup"], ["Điều khoản sử dụng TNStrokeGuard 247", "/terms"], ["Cổng Quản trị Nội bộ", "/admin/login"]]}
+    ],
+    "socials": ["Facebook (https://facebook.com)", "Zalo (https://zalo.me/0933991990)", "TikTok (https://tiktok.com)", "YouTube (https://youtube.com)"],
+    "legalLinks": ["Chính sách Bảo mật → /privacy", "Xem Chính sách Cookie chi tiết → /cookies"],
+    "trademarkLine": "TNMALL / Pharmacy.vn"
+  },
+  "cookieBanner": {"buttons": ["Tùy chỉnh", "Chỉ cookie thiết yếu", "Chấp nhận tất cả"], "note": "Choose 'Chỉ cookie thiết yếu' per privacy guidance; banner text not separately captured."},
+  "floatingElements": {"observed": ["Đăng nhập Zalo (Zalo OA link)", "Tư vấn (chat/consult button, bottom-right)", "Tải ứng dụng"], "note": "Exact positioning/behaviour not verified via computed styles."},
+  "design": {
+    "fontFamily": "\"Be Vietnam Pro\", system-ui, -apple-system, sans-serif",
+    "pageBackground": "rgb(237, 240, 245) (#EDF0F5)",
+    "primaryOrange": "rgb(234, 88, 12) (#EA580C)",
+    "primaryOrangeSoftBg": "rgb(255, 245, 235) (#FFF5EB)",
+    "headingColor": "rgb(15, 23, 42) (#0F172A)",
+    "heroHeadingSize": "26px / weight 900 (h1 on product detail)",
+    "priceSize": "36px / weight 900 in primary orange",
+    "buttonPrimary": {"bg": "#EA580C", "text": "#FFFFFF", "radius": "16px", "fontSize": "14px", "weight": 700, "shadow": "0 4px 16px rgba(234,88,12,0.35)"},
+    "buttonSecondaryAddToCart": {"bg": "#FFF5EB", "text": "#EA580C", "radius": "16px", "fontSize": "14px", "weight": 700}
+  },
+  "routeCoverage": {
+    "/": "captured (text + links + images)",
+    "/products": "captured (11 cards; no hrefs on cards; detail via click)",
+    "/products?category=supplement": "captured (same 11 products; filter not applied)",
+    "/products?category=package": "captured (same 11 products; filter not applied)",
+    "/products?category=device": "captured (same 11 products; filter not applied)",
+    "/products/b0000000-0000-0000-0000-000000000006": "captured",
+    "/cart": "captured (empty + 1-item state; checkout form NOT captured, see notes)",
+    "/assessment": "captured",
+    "/assessment/general": "step 1 captured; step 2 NOT captured (needs personal data)",
+    "/assessment/afib": "step 1 captured; step 2 NOT captured; scoring captured",
+    "/results": "captured (empty state)",
+    "/symptoms": "captured",
+    "/symptoms?tab=emergency": "captured",
+    "/education": "captured",
+    "/education/kiem-soat-tang-huyet-ap-yeu-to-nguy-co-so-1": "captured",
+    "/orders/lookup": "captured",
+    "/download-app": "captured",
+    "/terms": "captured",
+    "/admin/login": "described only, not submitted"
+  }
+}
