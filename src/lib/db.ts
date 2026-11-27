@@ -10,7 +10,11 @@ import { seedDatabase } from "./seed";
  * The DB file lives at DATABASE_PATH (default ./data/app.db). Schema is created and
  * demo data seeded automatically on first connection.
  */
-const DB_PATH = process.env.DATABASE_PATH || path.join(process.cwd(), "data", "app.db");
+// On Vercel the deployment filesystem is read-only; only /tmp is writable (and it is
+// per-instance + ephemeral, so the demo DB re-seeds on each cold start).
+const DB_PATH =
+  process.env.DATABASE_PATH ||
+  (process.env.VERCEL ? "/tmp/tn-app.db" : path.join(process.cwd(), "data", "app.db"));
 
 type GlobalWithDb = typeof globalThis & { __tnDb?: DatabaseSync };
 const g = globalThis as GlobalWithDb;
